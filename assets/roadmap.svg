@@ -1,174 +1,147 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%">
+<svg width="900" height="260" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
-      
-      .roadmap-bg {
-        fill: #06070b;
-        stroke: #1a2233;
-        stroke-width: 1.5;
-      }
-      
-      .conn-line {
-        stroke: #141b29;
-        stroke-width: 4;
-        stroke-linecap: round;
-      }
-      
-      .conn-line-active {
-        stroke: url(#line-grad);
-        stroke-width: 3;
-        stroke-linecap: round;
-        filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.4));
-      }
-      
-      .node-outer {
-        fill: #080a10;
-        stroke: #00f0ff;
-        stroke-width: 1.5;
-        cursor: pointer;
-      }
-      
-      .node-outer-current {
-        fill: #080a10;
-        stroke: #00ff66;
-        stroke-width: 2;
-        filter: drop-shadow(0 0 6px rgba(0, 255, 102, 0.6));
-        animation: pulse-node 2s infinite alternate;
-      }
-      
-      .node-inner {
-        fill: #00f0ff;
-      }
-      
-      .node-inner-current {
-        fill: #00ff66;
-      }
-      
-      .label-title {
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 700;
-        font-size: 11px;
-        fill: #ffffff;
-        text-anchor: middle;
-      }
-      
-      .label-title-current {
-        fill: #00ff66;
-        filter: drop-shadow(0 0 3px rgba(0, 255, 102, 0.4));
-      }
-      
-      .label-sub {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 10px;
-        fill: #6c7a9c;
-        text-anchor: middle;
-      }
-      
-      .grid-dot {
-        fill: #141b29;
-      }
-      
-      @keyframes pulse-node {
-        0% { transform: scale(1); }
-        100% { transform: scale(1.08); }
-      }
-      
-      .pulse-ring {
-        fill: none;
-        stroke: #00ff66;
-        stroke-width: 1;
-        opacity: 0.8;
-        animation: expand-ring 2s infinite linear;
-      }
-      
-      @keyframes expand-ring {
-        0% { r: 10; opacity: 1; }
-        100% { r: 25; opacity: 0; }
-      }
-    </style>
-    
-    <!-- Gradients & Filters -->
-    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="50%" stop-color="#bd00ff" />
-      <stop offset="100%" stop-color="#00ff66" />
+    <linearGradient id="roadBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#04080f"/>
+      <stop offset="100%" style="stop-color:#060310"/>
     </linearGradient>
-    
-    <filter id="glow-green">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="50%" style="stop-color:#bd00ff"/>
+      <stop offset="100%" style="stop-color:#00ff66"/>
+    </linearGradient>
+    <pattern id="dotGrid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.6" fill="rgba(0,240,255,0.12)"/>
+    </pattern>
+    <linearGradient id="doneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff66"/>
+      <stop offset="100%" style="stop-color:#00b347"/>
+    </linearGradient>
+    <linearGradient id="activeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="100%" style="stop-color:#0080aa"/>
+    </linearGradient>
+    <linearGradient id="nextGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#bd00ff"/>
+      <stop offset="100%" style="stop-color:#6600aa"/>
+    </linearGradient>
+    <linearGradient id="futureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2233"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
   </defs>
 
-  <!-- Background container -->
-  <rect x="5" y="5" width="790" height="190" rx="8" class="roadmap-bg" />
+  <!-- Background -->
+  <rect width="900" height="260" fill="url(#roadBg)" rx="10"/>
+  <rect width="900" height="260" fill="url(#dotGrid)" rx="10"/>
 
-  <!-- Background decorative dot grid -->
-  <g class="grid-dot">
-    <circle cx="50" cy="30" r="1" /><circle cx="150" cy="30" r="1" /><circle cx="250" cy="30" r="1" /><circle cx="350" cy="30" r="1" /><circle cx="450" cy="30" r="1" /><circle cx="550" cy="30" r="1" /><circle cx="650" cy="30" r="1" /><circle cx="750" cy="30" r="1" />
-    <circle cx="50" cy="170" r="1" /><circle cx="150" cy="170" r="1" /><circle cx="250" cy="170" r="1" /><circle cx="350" cy="170" r="1" /><circle cx="450" cy="170" r="1" /><circle cx="550" cy="170" r="1" /><circle cx="650" cy="170" r="1" /><circle cx="750" cy="170" r="1" />
-  </g>
-  
-  <!-- Outer boundary brackets -->
-  <path d="M 20 15 L 12 15 L 12 23 M 780 15 L 788 15 L 788 23 M 12 177 L 12 185 L 20 185 M 788 177 L 788 185 L 780 185" fill="none" stroke="#2c3b59" stroke-width="1.5" />
+  <!-- Title -->
+  <text x="450" y="38" font-family="'Courier New', monospace" font-size="15" font-weight="700"
+        fill="url(#lineGrad)" text-anchor="middle" letter-spacing="5" filter="url(#glow)">
+    ◈ TARGET TIMELINE / MISSION ◈
+  </text>
 
-  <!-- Connecting Roadmap Lines -->
-  <line x1="80" y1="100" x2="720" y2="100" class="conn-line" />
-  <line x1="80" y1="100" x2="720" y2="100" class="conn-line-active" />
+  <!-- Timeline connector line -->
+  <line x1="60" y1="130" x2="840" y2="130" stroke="url(#lineGrad)" stroke-width="2" opacity="0.4"/>
 
-  <!-- Animated pulsing tracking dot traversing the timeline -->
-  <circle r="4" fill="#00ff66" filter="url(#glow-green)">
-    <animateMotion dur="8s" repeatCount="indefinite" path="M 80,100 L 720,100" />
+  <!-- === NODE 1: DONE === -->
+  <!-- Glow ring -->
+  <circle cx="110" cy="130" r="28" fill="rgba(0,255,102,0.1)" filter="url(#softGlow)"/>
+  <circle cx="110" cy="130" r="22" fill="url(#doneGrad)" stroke="#00ff66" stroke-width="2.5"/>
+  <text x="110" y="127" font-family="Courier New" font-size="11" fill="#000" text-anchor="middle" font-weight="900">✓</text>
+  <text x="110" y="139" font-family="Courier New" font-size="7" fill="#000" text-anchor="middle">DONE</text>
+  <!-- Label -->
+  <rect x="60" y="168" width="100" height="38" rx="6" fill="rgba(0,255,102,0.08)" stroke="#00ff66" stroke-width="1" opacity="0.9"/>
+  <text x="110" y="183" font-family="Courier New" font-size="8.5" fill="#00ff66" text-anchor="middle" font-weight="700">FOUNDATIONS</text>
+  <text x="110" y="196" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">Python · Linux</text>
+  <text x="110" y="207" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">Networking</text>
+  <!-- Status dot -->
+  <circle cx="110" cy="56" r="4" fill="#00ff66" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
   </circle>
+  <text x="110" y="50" font-family="Courier New" font-size="7" fill="#00ff66" text-anchor="middle">2024</text>
 
-  <!-- ==================== NODE 1 ==================== -->
-  <g transform="translate(100, 100)">
-    <circle cx="0" cy="0" r="12" class="node-outer" />
-    <circle cx="0" cy="0" r="5" class="node-inner" />
-    <text x="0" y="-35" class="label-title">LLM SEC TOOLS</text>
-    <text x="0" y="-22" class="label-sub">Phase_01 [Done]</text>
-  </g>
+  <!-- Connector -->
+  <line x1="132" y1="130" x2="218" y2="130" stroke="#00f0ff" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
 
-  <!-- ==================== NODE 2 ==================== -->
-  <g transform="translate(250, 100)">
-    <circle cx="0" cy="0" r="12" class="node-outer" />
-    <circle cx="0" cy="0" r="5" class="node-inner" />
-    <text x="0" y="32" class="label-title">SECURE AI</text>
-    <text x="0" y="45" class="label-sub">Phase_02 [Active]</text>
-  </g>
+  <!-- === NODE 2: DONE === -->
+  <circle cx="240" cy="130" r="28" fill="rgba(0,255,102,0.1)" filter="url(#softGlow)"/>
+  <circle cx="240" cy="130" r="22" fill="url(#doneGrad)" stroke="#00ff66" stroke-width="2.5"/>
+  <text x="240" y="127" font-family="Courier New" font-size="11" fill="#000" text-anchor="middle" font-weight="900">✓</text>
+  <text x="240" y="139" font-family="Courier New" font-size="7" fill="#000" text-anchor="middle">DONE</text>
+  <rect x="190" y="168" width="100" height="38" rx="6" fill="rgba(0,255,102,0.08)" stroke="#00ff66" stroke-width="1" opacity="0.9"/>
+  <text x="240" y="183" font-family="Courier New" font-size="8.5" fill="#00ff66" text-anchor="middle" font-weight="700">CYBER TOOLS</text>
+  <text x="240" y="196" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">Kali · Nmap</text>
+  <text x="240" y="207" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">Burp · Wireshark</text>
+  <text x="240" y="50" font-family="Courier New" font-size="7" fill="#00ff66" text-anchor="middle">2024</text>
 
-  <!-- ==================== NODE 3 ==================== -->
-  <g transform="translate(400, 100)">
-    <!-- Pulse ring for current phase -->
-    <circle cx="0" cy="0" r="10" class="pulse-ring" />
-    <circle cx="0" cy="0" r="12" class="node-outer-current" />
-    <circle cx="0" cy="0" r="5" class="node-inner-current" />
-    <!-- Glowing label for current target -->
-    <text x="0" y="-35" class="label-title label-title-current">AI RED TEAMING</text>
-    <text x="0" y="-22" class="label-sub">Phase_03 [Current]</text>
-  </g>
+  <!-- Connector -->
+  <line x1="262" y1="130" x2="348" y2="130" stroke="#00f0ff" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
 
-  <!-- ==================== NODE 4 ==================== -->
-  <g transform="translate(550, 100)">
-    <circle cx="0" cy="0" r="12" class="node-outer" style="stroke: #bd00ff; opacity: 0.7;" />
-    <circle cx="0" cy="0" r="4" class="node-inner" style="fill: #bd00ff; opacity: 0.7;" />
-    <text x="0" y="32" class="label-title" style="opacity: 0.7;">OPEN SOURCE</text>
-    <text x="0" y="45" class="label-sub">Phase_04 [Queue]</text>
-  </g>
+  <!-- === NODE 3: ACTIVE === -->
+  <circle cx="370" cy="130" r="32" fill="rgba(0,240,255,0.15)" filter="url(#softGlow)">
+    <animate attributeName="r" values="32;38;32" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.3;0.15" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="370" cy="130" r="25" fill="url(#activeGrad)" stroke="#00f0ff" stroke-width="3" filter="url(#glow)"/>
+  <text x="370" y="126" font-family="Courier New" font-size="9" fill="#000" text-anchor="middle" font-weight="900">⚡</text>
+  <text x="370" y="138" font-family="Courier New" font-size="7" fill="#000" text-anchor="middle">ACTIVE</text>
+  <rect x="315" y="168" width="110" height="38" rx="6" fill="rgba(0,240,255,0.12)" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="370" y="183" font-family="Courier New" font-size="8.5" fill="#00f0ff" text-anchor="middle" font-weight="700">AI SECURITY</text>
+  <text x="370" y="196" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">PyRIT · Garak</text>
+  <text x="370" y="207" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">LLM Testing</text>
+  <circle cx="370" cy="56" r="5" fill="#00f0ff" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="370" y="50" font-family="Courier New" font-size="7" fill="#00f0ff" text-anchor="middle">NOW →</text>
 
-  <!-- ==================== NODE 5 ==================== -->
-  <g transform="translate(700, 100)">
-    <circle cx="0" cy="0" r="12" class="node-outer" style="stroke: #bd00ff; opacity: 0.7;" />
-    <circle cx="0" cy="0" r="4" class="node-inner" style="fill: #bd00ff; opacity: 0.7;" />
-    <text x="0" y="-35" class="label-title" style="opacity: 0.7;">INTERNSHIP</text>
-    <text x="0" y="-22" class="label-sub">Phase_05 [Goal]</text>
-  </g>
-  
-  <!-- Diagnostic Telemetry details -->
-  <text x="25" y="160" font-family="Share Tech Mono" font-size="9" fill="#2c3b59">MAP_COORD: [ANMOL_SEC_PATH_2026]</text>
-  <text x="775" y="160" font-family="Share Tech Mono" font-size="9" fill="#2c3b59" text-anchor="end">STATUS: EXECUTION_ONGOING</text>
+  <!-- Connector -->
+  <line x1="395" y1="130" x2="475" y2="130" stroke="#bd00ff" stroke-width="2" stroke-dasharray="5,4" opacity="0.5"/>
+
+  <!-- === NODE 4: NEXT === -->
+  <circle cx="500" cy="130" r="28" fill="rgba(189,0,255,0.1)" filter="url(#softGlow)"/>
+  <circle cx="500" cy="130" r="22" fill="url(#nextGrad)" stroke="#bd00ff" stroke-width="2.5"/>
+  <text x="500" y="127" font-family="Courier New" font-size="11" fill="#fff" text-anchor="middle">→</text>
+  <text x="500" y="139" font-family="Courier New" font-size="7" fill="#fff" text-anchor="middle">NEXT</text>
+  <rect x="448" y="168" width="104" height="38" rx="6" fill="rgba(189,0,255,0.08)" stroke="#bd00ff" stroke-width="1" opacity="0.9"/>
+  <text x="500" y="183" font-family="Courier New" font-size="8.5" fill="#bd00ff" text-anchor="middle" font-weight="700">SOC ANALYST</text>
+  <text x="500" y="196" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">Splunk · Wazuh</text>
+  <text x="500" y="207" font-family="Courier New" font-size="7.5" fill="#8b949e" text-anchor="middle">ELK · TheHive</text>
+  <text x="500" y="50" font-family="Courier New" font-size="7" fill="#bd00ff" text-anchor="middle">2025 Q1</text>
+
+  <!-- Connector -->
+  <line x1="522" y1="130" x2="608" y2="130" stroke="#bd00ff" stroke-width="1.5" stroke-dasharray="6,5" opacity="0.35"/>
+
+  <!-- === NODE 5: FUTURE === -->
+  <circle cx="630" cy="130" r="22" fill="url(#futureGrad)" stroke="#3a4560" stroke-width="2"/>
+  <text x="630" y="127" font-family="Courier New" font-size="11" fill="#3a4560" text-anchor="middle">◎</text>
+  <text x="630" y="139" font-family="Courier New" font-size="7" fill="#3a4560" text-anchor="middle">FUTURE</text>
+  <rect x="578" y="168" width="104" height="38" rx="6" fill="rgba(30,40,70,0.4)" stroke="#3a4560" stroke-width="1" opacity="0.8"/>
+  <text x="630" y="183" font-family="Courier New" font-size="8.5" fill="#3a4560" text-anchor="middle" font-weight="700">CERT &amp; CERTS</text>
+  <text x="630" y="196" font-family="Courier New" font-size="7.5" fill="#3a4560" text-anchor="middle">CEH · OSCP</text>
+  <text x="630" y="207" font-family="Courier New" font-size="7.5" fill="#3a4560" text-anchor="middle">CompTIA+</text>
+  <text x="630" y="50" font-family="Courier New" font-size="7" fill="#3a4560" text-anchor="middle">2025 Q3</text>
+
+  <!-- Connector -->
+  <line x1="652" y1="130" x2="738" y2="130" stroke="#3a4560" stroke-width="1.5" stroke-dasharray="6,5" opacity="0.3"/>
+
+  <!-- === NODE 6: FUTURE === -->
+  <circle cx="760" cy="130" r="22" fill="url(#futureGrad)" stroke="#3a4560" stroke-width="2"/>
+  <text x="760" y="127" font-family="Courier New" font-size="11" fill="#3a4560" text-anchor="middle">◎</text>
+  <text x="760" y="139" font-family="Courier New" font-size="7" fill="#3a4560" text-anchor="middle">FUTURE</text>
+  <rect x="706" y="168" width="108" height="38" rx="6" fill="rgba(30,40,70,0.4)" stroke="#3a4560" stroke-width="1" opacity="0.8"/>
+  <text x="760" y="183" font-family="Courier New" font-size="8.5" fill="#3a4560" text-anchor="middle" font-weight="700">AI SEC ANALYST</text>
+  <text x="760" y="196" font-family="Courier New" font-size="7.5" fill="#3a4560" text-anchor="middle">Full-Time Role</text>
+  <text x="760" y="207" font-family="Courier New" font-size="7.5" fill="#3a4560" text-anchor="middle">AI Red Teaming</text>
+  <text x="760" y="50" font-family="Courier New" font-size="7" fill="#3a4560" text-anchor="middle">2026</text>
+
+  <!-- Border -->
+  <rect width="900" height="260" fill="none" stroke="#1a2233" stroke-width="1.5" rx="10"/>
 </svg>

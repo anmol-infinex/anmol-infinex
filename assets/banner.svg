@@ -1,217 +1,164 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 260" width="100%">
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Fonts -->
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&amp;family=Share+Tech+Mono&amp;display=swap');
-      
-      .title {
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 900;
-        fill: #00f0ff;
-        font-size: 42px;
-        letter-spacing: 5px;
-        filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6));
-        animation: glitch 4s infinite alternate;
-      }
-      
-      .subtitle {
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 500;
-        fill: #bd00ff;
-        font-size: 16px;
-        letter-spacing: 6px;
-        filter: drop-shadow(0 0 5px rgba(189, 0, 255, 0.5));
-      }
-      
-      .mono-text {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 11px;
-        fill: #00ff66;
-        opacity: 0.8;
-      }
-      
-      .accent-text {
-        fill: #bd00ff;
-      }
-      
-      .grid-lines {
-        stroke: #141923;
-        stroke-width: 1;
-      }
-      
-      .grid-accent {
-        stroke: #00f0ff;
-        stroke-width: 1.5;
-        opacity: 0.3;
-        animation: pulse-grid 3s infinite ease-in-out;
-      }
-      
-      .scanner-line {
-        stroke: #00f0ff;
-        stroke-width: 1;
-        opacity: 0.5;
-        animation: scan 8s infinite linear;
-      }
-      
-      .glow-ring {
-        transform-origin: 750px 130px;
-        animation: rotate-ring 20s infinite linear;
-      }
-      
-      /* Animations */
-      @keyframes glitch {
-        0%, 100% {
-          transform: translate(0);
-          text-shadow: 0 0 8px rgba(0,240,255,0.6);
-        }
-        92% {
-          transform: translate(0);
-          text-shadow: 0 0 8px rgba(0,240,255,0.6);
-        }
-        94% {
-          transform: translate(-2px, 1px);
-          text-shadow: -2px 0 red, 2px 0 blue;
-        }
-        96% {
-          transform: translate(2px, -1px);
-          text-shadow: -2px 0 blue, 2px 0 red;
-        }
-        98% {
-          transform: translate(-1px, -1px);
-          text-shadow: -1px 0 #00ff66, 1px 0 #bd00ff;
-        }
-      }
-      
-      @keyframes scan {
-        0% { y1: 10px; y2: 10px; }
-        50% { y1: 250px; y2: 250px; }
-        100% { y1: 10px; y2: 10px; }
-      }
-      
-      @keyframes pulse-grid {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.4; }
-      }
-      
-      @keyframes rotate-ring {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-      
-      @keyframes pulse-dot {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 1; }
-      }
-      
-      .status-dot {
-        animation: pulse-dot 1.5s infinite ease-in-out;
-      }
-    </style>
-    
-    <!-- Gradients -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050508" />
-      <stop offset="50%" stop-color="#090a12" />
-      <stop offset="100%" stop-color="#020204" />
+    <!-- Deep space background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00000f"/>
+      <stop offset="40%" style="stop-color:#040612"/>
+      <stop offset="100%" style="stop-color:#0a0018"/>
     </linearGradient>
-    
-    <linearGradient id="panel-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0d111b" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#07090e" stop-opacity="0.9" />
-    </linearGradient>
-    
-    <!-- Neon blue glow filter -->
-    <filter id="glow-cyan-f" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Cyan neon glow filter -->
+    <filter id="cyanGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur1"/>
+      <feGaussianBlur stdDeviation="8" result="blur2"/>
+      <feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <!-- Purple neon glow filter -->
+    <filter id="purpleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur1"/>
+      <feGaussianBlur stdDeviation="10" result="blur2"/>
+      <feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Green glow filter -->
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="rgba(0,240,255,0.03)"/>
+      <rect y="2" width="1" height="1" fill="rgba(0,0,0,0.1)"/>
+    </pattern>
+    <!-- Grid pattern -->
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,240,255,0.06)" stroke-width="0.5"/>
+    </pattern>
+    <!-- Corner bracket gradient -->
+    <linearGradient id="bracketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="100%" style="stop-color:#bd00ff"/>
+    </linearGradient>
+    <!-- Title text gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="45%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#bd00ff"/>
+    </linearGradient>
+    <!-- Horizontal line gradient -->
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:transparent"/>
+      <stop offset="20%" style="stop-color:#00f0ff"/>
+      <stop offset="50%" style="stop-color:#bd00ff"/>
+      <stop offset="80%" style="stop-color:#00f0ff"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+    </linearGradient>
   </defs>
 
-  <!-- Background Canvas -->
-  <rect width="850" height="260" rx="10" fill="url(#bg-grad)" stroke="#1a2233" stroke-width="1.5" />
-  
-  <!-- Digital Grid Pattern -->
-  <g class="grid-lines">
-    <!-- Vertical lines -->
-    <line x1="50" y1="10" x2="50" y2="250" />
-    <line x1="100" y1="10" x2="100" y2="250" />
-    <line x1="150" y1="10" x2="150" y2="250" />
-    <line x1="200" y1="10" x2="200" y2="250" />
-    <line x1="250" y1="10" x2="250" y2="250" />
-    <line x1="300" y1="10" x2="300" y2="250" />
-    <line x1="350" y1="10" x2="350" y2="250" />
-    <line x1="400" y1="10" x2="400" y2="250" />
-    <line x1="450" y1="10" x2="450" y2="250" />
-    <line x1="500" y1="10" x2="500" y2="250" />
-    <line x1="550" y1="10" x2="550" y2="250" />
-    <line x1="600" y1="10" x2="600" y2="250" />
-    <line x1="650" y1="10" x2="650" y2="250" />
-    <line x1="700" y1="10" x2="700" y2="250" />
-    <line x1="750" y1="10" x2="750" y2="250" />
-    <line x1="800" y1="10" x2="800" y2="250" />
-    
-    <!-- Horizontal lines -->
-    <line x1="10" y1="40" x2="840" y2="40" />
-    <line x1="10" y1="80" x2="840" y2="80" />
-    <line x1="10" y1="120" x2="840" y2="120" />
-    <line x1="10" y1="160" x2="840" y2="160" />
-    <line x1="10" y1="200" x2="840" y2="200" />
-    <line x1="10" y1="240" x2="840" y2="240" />
-  </g>
-  
-  <!-- Glowing accent lines -->
-  <line x1="10" y1="120" x2="840" y2="120" class="grid-accent" />
-  <line x1="450" y1="10" x2="450" y2="250" class="grid-accent" />
+  <!-- Background -->
+  <rect width="900" height="280" fill="url(#bgGrad)" rx="8"/>
+  <rect width="900" height="280" fill="url(#grid)" rx="8" opacity="0.7"/>
+  <rect width="900" height="280" fill="url(#scanlines)" rx="8"/>
 
-  <!-- Animated Scanline -->
-  <line x1="10" y1="10" x2="840" y2="10" class="scanner-line" />
-  
-  <!-- Cyber HUD Border Brackets -->
-  <path d="M 25 15 L 15 15 L 15 25" fill="none" stroke="#00f0ff" stroke-width="2.5" />
-  <path d="M 825 15 L 835 15 L 835 25" fill="none" stroke="#00f0ff" stroke-width="2.5" />
-  <path d="M 25 245 L 15 245 L 15 235" fill="none" stroke="#00f0ff" stroke-width="2.5" />
-  <path d="M 825 245 L 835 245 L 835 235" fill="none" stroke="#00f0ff" stroke-width="2.5" />
-
-  <!-- Technical Overlay Details -->
-  <!-- Top Left Info Panel -->
-  <rect x="30" y="25" width="220" height="40" fill="url(#panel-grad)" stroke="#1a2233" stroke-width="1" rx="3" />
-  <text x="40" y="40" class="mono-text">SYSTEM: <tspan fill="#ffffff">ONLINE</tspan></text>
-  <text x="40" y="55" class="mono-text">SEC_LEVEL: <tspan class="accent-text">MAXIMUM_AI</tspan></text>
-  <circle cx="230" cy="45" r="5" fill="#00ff66" class="status-dot" filter="url(#glow-cyan-f)" />
-  
-  <!-- Bottom Left Telemetry -->
-  <text x="30" y="225" class="mono-text">LOC: <tspan fill="#ffffff">0x7F / 127.0.0.1</tspan></text>
-  <text x="30" y="240" class="mono-text">PROTOCOL: <tspan fill="#00f0ff">SECURE_AGENT_v2.6</tspan></text>
-
-  <!-- Circular Target HUD graphics on the right side -->
-  <g class="glow-ring">
-    <circle cx="750" cy="130" r="80" fill="none" stroke="#121824" stroke-width="1.5" />
-    <circle cx="750" cy="130" r="70" fill="none" stroke="#bd00ff" stroke-dasharray="10, 8, 4, 8" stroke-width="1" opacity="0.6" />
-    <circle cx="750" cy="130" r="60" fill="none" stroke="#00f0ff" stroke-dasharray="180, 40, 90, 50" stroke-width="1.5" opacity="0.7" />
-    <circle cx="750" cy="130" r="50" fill="none" stroke="#141c2c" stroke-width="1" />
-    <path d="M 750 65 L 750 75 M 750 185 L 750 195 M 685 130 L 695 130 M 805 130 L 815 130" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
-  </g>
-  <circle cx="750" cy="130" r="6" fill="#00f0ff" filter="url(#glow-cyan-f)" />
-  <line x1="720" y1="130" x2="780" y2="130" stroke="#00f0ff" stroke-width="1" opacity="0.5" />
-  <line x1="750" y1="100" x2="750" y2="160" stroke="#00f0ff" stroke-width="1" opacity="0.5" />
-
-  <!-- Center Text Panel -->
-  <g transform="translate(180, 110)">
-    <!-- Tech brackets styling behind name -->
-    <path d="M -15 -25 L -5 -25 M -15 -25 L -15 45 M -15 45 L -5 45" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.5" />
-    <path d="M 465 -25 L 455 -25 M 465 -25 L 465 45 M 465 45 L 455 45" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.5" />
-    
-    <text x="0" y="15" class="title">ANMOL RATHOD</text>
-    <text x="5" y="42" class="subtitle">AI SECURITY // CYBERSECURITY</text>
+  <!-- Animated matrix rain columns -->
+  <g font-family="Courier New" font-size="11" fill="#00f0ff" opacity="0.12">
+    <text x="18" y="0"><animate attributeName="y" values="0;280" dur="3.1s" repeatCount="indefinite"/>0110</text>
+    <text x="60" y="-80"><animate attributeName="y" values="-80;280" dur="2.7s" repeatCount="indefinite"/>1001</text>
+    <text x="120" y="-30"><animate attributeName="y" values="-30;280" dur="4.2s" repeatCount="indefinite"/>0101</text>
+    <text x="180" y="-120"><animate attributeName="y" values="-120;280" dur="3.8s" repeatCount="indefinite"/>1100</text>
+    <text x="240" y="0"><animate attributeName="y" values="0;280" dur="2.5s" repeatCount="indefinite"/>0011</text>
+    <text x="300" y="-60"><animate attributeName="y" values="-60;280" dur="3.5s" repeatCount="indefinite"/>1010</text>
+    <text x="360" y="-100"><animate attributeName="y" values="-100;280" dur="4.0s" repeatCount="indefinite"/>0110</text>
+    <text x="660" y="-40"><animate attributeName="y" values="-40;280" dur="3.3s" repeatCount="indefinite"/>1001</text>
+    <text x="720" y="-90"><animate attributeName="y" values="-90;280" dur="2.9s" repeatCount="indefinite"/>0100</text>
+    <text x="780" y="-20"><animate attributeName="y" values="-20;280" dur="3.7s" repeatCount="indefinite"/>1110</text>
+    <text x="840" y="-60"><animate attributeName="y" values="-60;280" dur="4.1s" repeatCount="indefinite"/>0011</text>
   </g>
 
-  <!-- Telemetry detail accents -->
-  <path d="M 500 25 L 530 25 L 540 35 L 630 35" fill="none" stroke="#1c2538" stroke-width="1" />
-  <rect x="635" y="32" width="6" height="6" fill="#bd00ff" opacity="0.7" />
-  <text x="545" y="30" class="mono-text" style="font-size: 8px; fill: #1c2538;">CORE_INTEL_LOAD_OK</text>
-  
-  <text x="815" y="240" class="mono-text" style="text-anchor: end; fill: #bd00ff;">SYS_VER_4.98c</text>
+  <!-- Ambient glowing orbs -->
+  <circle cx="150" cy="140" r="70" fill="rgba(0,240,255,0.04)">
+    <animate attributeName="r" values="70;90;70" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.04;0.08;0.04" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="750" cy="140" r="80" fill="rgba(189,0,255,0.04)">
+    <animate attributeName="r" values="80;100;80" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.04;0.08;0.04" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="240" r="50" fill="rgba(0,255,102,0.03)">
+    <animate attributeName="r" values="50;70;50" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Top decorative line -->
+  <line x1="50" y1="22" x2="850" y2="22" stroke="url(#lineGrad)" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Corner brackets — top left -->
+  <path d="M 20 8 L 20 45 M 20 8 L 60 8" stroke="url(#bracketGrad)" stroke-width="2.5" fill="none" filter="url(#cyanGlow)"/>
+  <!-- Corner brackets — top right -->
+  <path d="M 880 8 L 880 45 M 880 8 L 840 8" stroke="url(#bracketGrad)" stroke-width="2.5" fill="none" filter="url(#cyanGlow)"/>
+  <!-- Corner brackets — bottom left -->
+  <path d="M 20 272 L 20 235 M 20 272 L 60 272" stroke="url(#bracketGrad)" stroke-width="2.5" fill="none" filter="url(#cyanGlow)"/>
+  <!-- Corner brackets — bottom right -->
+  <path d="M 880 272 L 880 235 M 880 272 L 840 272" stroke="url(#bracketGrad)" stroke-width="2.5" fill="none" filter="url(#cyanGlow)"/>
+
+  <!-- Top status bar dots -->
+  <circle cx="36" cy="14" r="3.5" fill="#00ff66"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="52" cy="14" r="3.5" fill="#ffcc00"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="68" cy="14" r="3.5" fill="#ff3366"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
+  <text x="86" y="19" font-family="Courier New" font-size="9" fill="#00f0ff" opacity="0.6">SYSTEM://ONLINE</text>
+
+  <!-- NODE_ID top right -->
+  <text x="750" y="19" font-family="Courier New" font-size="9" fill="#bd00ff" opacity="0.7">ID::AR-SEC-∞</text>
+
+  <!-- Main name text - huge and centered -->
+  <text x="450" y="118" font-family="'Trebuchet MS', Arial, sans-serif" font-size="58" font-weight="900"
+        fill="url(#titleGrad)" text-anchor="middle" letter-spacing="10" filter="url(#cyanGlow)">
+    ANMOL RATHOD
+  </text>
+
+  <!-- Glitch effect layer 1 -->
+  <text x="450" y="118" font-family="'Trebuchet MS', Arial, sans-serif" font-size="58" font-weight="900"
+        fill="rgba(0,240,255,0.3)" text-anchor="middle" letter-spacing="10" opacity="0">
+    ANMOL RATHOD
+    <animate attributeName="opacity" values="0;0;0;0.6;0;0;0;0;0.4;0;0" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="450;452;448;450;450;450;450;452;450;450" dur="4s" repeatCount="indefinite"/>
+  </text>
+  <!-- Glitch effect layer 2 -->
+  <text x="450" y="118" font-family="'Trebuchet MS', Arial, sans-serif" font-size="58" font-weight="900"
+        fill="rgba(189,0,255,0.3)" text-anchor="middle" letter-spacing="10" opacity="0">
+    ANMOL RATHOD
+    <animate attributeName="opacity" values="0;0;0;0;0.5;0;0;0;0;0.3;0" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="450;448;452;450;450;450;449;450;451;450" dur="4s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Subtitle separator line -->
+  <line x1="180" y1="136" x2="370" y2="136" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
+  <circle cx="450" cy="136" r="4" fill="#00f0ff" filter="url(#cyanGlow)">
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="530" y1="136" x2="720" y2="136" stroke="#bd00ff" stroke-width="1" opacity="0.5"/>
+
+  <!-- Role tags -->
+  <text x="450" y="168" font-family="'Courier New', monospace" font-size="15" font-weight="700"
+        fill="#00f0ff" text-anchor="middle" letter-spacing="4" filter="url(#greenGlow)">
+    AI SECURITY · LLM SECURITY · CYBERSECURITY
+  </text>
+
+  <!-- Status tags -->
+  <rect x="195" y="195" width="130" height="24" rx="12" fill="rgba(0,240,255,0.08)" stroke="#00f0ff" stroke-width="1" opacity="0.9"/>
+  <text x="260" y="212" font-family="Courier New" font-size="10" fill="#00f0ff" text-anchor="middle" font-weight="700">⚡ BUILDER</text>
+
+  <rect x="340" y="195" width="130" height="24" rx="12" fill="rgba(189,0,255,0.08)" stroke="#bd00ff" stroke-width="1" opacity="0.9"/>
+  <text x="405" y="212" font-family="Courier New" font-size="10" fill="#bd00ff" text-anchor="middle" font-weight="700">🛡️ DEFENDER</text>
+
+  <rect x="485" y="195" width="130" height="24" rx="12" fill="rgba(0,255,102,0.08)" stroke="#00ff66" stroke-width="1" opacity="0.9"/>
+  <text x="550" y="212" font-family="Courier New" font-size="10" fill="#00ff66" text-anchor="middle" font-weight="700">🔬 RESEARCHER</text>
+
+  <!-- Bottom decorative line -->
+  <line x1="50" y1="248" x2="850" y2="248" stroke="url(#lineGrad)" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Bottom status bar -->
+  <text x="450" y="268" font-family="Courier New" font-size="9" fill="#00f0ff" text-anchor="middle" opacity="0.5">
+    [ STATUS: ACTIVE ] · [ MISSION: AI_SECURITY_ANALYST ] · [ THREAT_LVL: HUNTING ]
+  </text>
+
+  <!-- Border glow -->
+  <rect width="900" height="280" fill="none" stroke="url(#bracketGrad)" stroke-width="1.5" rx="8" opacity="0.4"/>
 </svg>

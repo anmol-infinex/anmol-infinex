@@ -1,264 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 370" width="100%">
+<svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;family=Share+Tech+Mono&amp;display=swap');
-      
-      .terminal-window {
-        fill: #06070b;
-        stroke: #1a2233;
-        stroke-width: 1.5;
-      }
-      
-      .terminal-header {
-        fill: #0d111b;
-        stroke: #1a2233;
-        stroke-width: 1.5;
-      }
-      
-      .window-title {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 13px;
-        fill: #8f9bb3;
-        letter-spacing: 1px;
-      }
-      
-      .line-num {
-        font-family: 'Fira Code', monospace;
-        font-size: 12px;
-        fill: #2e3b52;
-        text-anchor: end;
-        user-select: none;
-      }
-      
-      .term-text {
-        font-family: 'Fira Code', monospace;
-        font-size: 13px;
-        fill: #ffffff;
-      }
-      
-      .prompt {
-        fill: #00f0ff;
-        font-weight: 600;
-      }
-      
-      .cmd {
-        fill: #00ff66;
-        font-weight: 600;
-      }
-      
-      .val-name {
-        fill: #ffffff;
-        font-weight: 600;
-        filter: drop-shadow(0 0 3px rgba(255,255,255,0.3));
-      }
-      
-      .val-purple {
-        fill: #bd00ff;
-        font-weight: 600;
-      }
-      
-      .val-blue {
-        fill: #00a8ff;
-      }
-      
-      .val-comment {
-        fill: #4b5b75;
-        font-style: italic;
-      }
-      
-      .cursor {
-        fill: #00ff66;
-        animation: blink 1s step-end infinite;
-      }
-      
-      .telemetry-title {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 12px;
-        fill: #bd00ff;
-        letter-spacing: 2px;
-        font-weight: bold;
-      }
-      
-      .telemetry-label {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 11px;
-        fill: #8f9bb3;
-      }
-      
-      .telemetry-val {
-        font-family: 'Share Tech Mono', monospace;
-        font-size: 11px;
-        fill: #00ff66;
-      }
-      
-      .wave-line {
-        stroke: #00f0ff;
-        stroke-width: 1.5;
-        fill: none;
-        stroke-dasharray: 400;
-        stroke-dashoffset: 400;
-        animation: draw-wave 4s linear infinite;
-        filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.5));
-      }
-      
-      .status-light {
-        animation: pulse-light 2s infinite ease-in-out;
-      }
-      
-      @keyframes blink {
-        from, to { opacity: 0; }
-        50% { opacity: 1; }
-      }
-      
-      @keyframes draw-wave {
-        to { stroke-dashoffset: 0; }
-      }
-      
-      @keyframes pulse-light {
-        0%, 100% { fill: #00ff66; opacity: 0.4; filter: drop-shadow(0 0 1px rgba(0,255,102,0.2)); }
-        50% { fill: #00ff66; opacity: 1; filter: drop-shadow(0 0 6px rgba(0,255,102,0.8)); }
-      }
-      
-      .progress-bar-bg {
-        fill: #141923;
-        rx: 2;
-      }
-      .progress-bar-fill-cyan {
-        fill: #00f0ff;
-        rx: 2;
-        filter: drop-shadow(0 0 2px rgba(0,240,255,0.4));
-      }
-      .progress-bar-fill-purple {
-        fill: #bd00ff;
-        rx: 2;
-        filter: drop-shadow(0 0 2px rgba(189,0,255,0.4));
-      }
-    </style>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#04080f"/>
+      <stop offset="100%" style="stop-color:#060310"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="titleGlow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="100%" style="stop-color:#bd00ff"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.7" fill="rgba(0,240,255,0.15)"/>
+    </pattern>
   </defs>
 
-  <!-- Terminal Window Shadow/Glow -->
-  <rect x="5" y="5" width="790" height="360" rx="8" fill="rgba(0, 240, 255, 0.03)" stroke="#00f0ff" stroke-opacity="0.15" stroke-width="3" />
-  
-  <!-- Terminal Window Background -->
-  <rect x="10" y="10" width="780" height="350" rx="6" class="terminal-window" />
-  
-  <!-- Terminal Header Bar -->
-  <path d="M 10 16 A 6 6 0 0 1 16 10 L 784 10 A 6 6 0 0 1 790 16 L 790 40 L 10 40 Z" class="terminal-header" />
-  
-  <!-- Window Controls (Dots) -->
-  <circle cx="30" cy="25" r="6" fill="#ff5f56" />
-  <circle cx="50" cy="25" r="6" fill="#ffbd2e" />
-  <circle cx="70" cy="25" r="6" fill="#27c93f" />
-  
-  <!-- Terminal Header Title -->
-  <text x="400" y="29" class="window-title" text-anchor="middle">terminal - anmol@infinex: ~</text>
-  <path d="M 755 20 L 770 20 M 755 25 L 770 25 M 755 30 L 770 30" stroke="#4b5b75" stroke-width="1.5" />
+  <!-- Background -->
+  <rect width="900" height="320" fill="url(#bg)" rx="10"/>
+  <rect width="900" height="320" fill="url(#dots)" rx="10"/>
 
-  <!-- Code Line Numbers -->
-  <g class="line-num" transform="translate(45, 0)">
-    <text x="0" y="70">01</text>
-    <text x="0" y="95">02</text>
-    <text x="0" y="120">03</text>
-    <text x="0" y="145">04</text>
-    <text x="0" y="170">05</text>
-    <text x="0" y="195">06</text>
-    <text x="0" y="220">07</text>
-    <text x="0" y="245">08</text>
-    <text x="0" y="270">09</text>
-    <text x="0" y="295">10</text>
-    <text x="0" y="320">11</text>
-    <text x="0" y="345">12</text>
-  </g>
+  <!-- Terminal header bar -->
+  <rect x="0" y="0" width="900" height="42" rx="10" fill="#0d1117"/>
+  <rect x="0" y="32" width="900" height="10" fill="#0d1117"/>
 
-  <!-- Divider Line Between Terminal Code and Right Panel -->
-  <line x1="510" y1="40" x2="510" y2="360" stroke="#161c28" stroke-width="1" />
-  <!-- Accent Tech Notch on Divider -->
-  <path d="M 510 180 L 518 190 L 518 210 L 510 220" fill="none" stroke="#bd00ff" stroke-width="1.5" />
+  <!-- Traffic light dots -->
+  <circle cx="24" cy="21" r="7" fill="#ff5f57"/>
+  <circle cx="46" cy="21" r="7" fill="#febc2e"/>
+  <circle cx="68" cy="21" r="7" fill="#28c840"/>
 
-  <!-- Left Side: Terminal Code Content -->
-  <g transform="translate(65, 0)">
-    <!-- Line 1: whoami -->
-    <text x="0" y="70" class="term-text"><tspan class="prompt">$ </tspan><tspan class="cmd">whoami</tspan></text>
-    
-    <!-- Line 2: ANMOL RATHOD -->
-    <text x="0" y="95" class="term-text val-name">ANMOL RATHOD</text>
-    
-    <!-- Line 3: role -->
-    <text x="0" y="120" class="term-text"><tspan class="prompt">$ </tspan><tspan class="cmd">role</tspan></text>
-    
-    <!-- Line 4: AI Security Builder -->
-    <text x="0" y="145" class="term-text val-purple">AI Security Builder</text>
-    
-    <!-- Line 5: mission -->
-    <text x="0" y="170" class="term-text"><tspan class="prompt">$ </tspan><tspan class="cmd">mission</tspan></text>
-    
-    <!-- Line 6: Build LLM Security tools -->
-    <text x="0" y="195" class="term-text val-blue">Build LLM Security tools &amp; Secure AI systems.</text>
-    
-    <!-- Line 7: focus -->
-    <text x="0" y="220" class="term-text"><tspan class="prompt">$ </tspan><tspan class="cmd">focus</tspan></text>
-    
-    <!-- Line 8: Focus items -->
-    <text x="0" y="245" class="term-text"><tspan class="val-blue">[ </tspan>Generative AI<tspan class="val-comment">, </tspan>Agentic AI<tspan class="val-comment">, </tspan>Secure AI<tspan class="val-blue"> ]</tspan></text>
-    <text x="0" y="270" class="term-text"><tspan class="val-blue">[ </tspan>Cybersecurity<tspan class="val-comment">, </tspan>Linux<tspan class="val-comment">, </tspan>Networking<tspan class="val-blue"> ]</tspan></text>
-    
-    <!-- Line 10: goal -->
-    <text x="0" y="295" class="term-text"><tspan class="prompt">$ </tspan><tspan class="cmd">goal</tspan></text>
-    
-    <!-- Line 11: Become an AI Security Analyst. -->
-    <text x="0" y="320" class="term-text val-name">Become an AI Security Analyst.<tspan class="cursor">█</tspan></text>
-    
-    <!-- Line 12: Empty prompt -->
-    <text x="0" y="345" class="term-text"><tspan class="prompt">$ </tspan></text>
-  </g>
+  <!-- Terminal title -->
+  <text x="450" y="27" font-family="Courier New" font-size="12" fill="#8b949e" text-anchor="middle" font-weight="600">
+    anmol@infinex-terminal: ~/about_me
+  </text>
 
-  <!-- Right Side: System Telemetry & HUD -->
-  <g transform="translate(530, 0)">
-    <!-- Panel Title -->
-    <text x="0" y="70" class="telemetry-title">// DIAGNOSTICS</text>
-    <line x1="0" y1="78" x2="240" y2="78" stroke="#bd00ff" stroke-width="1.5" />
-    
-    <!-- Status Grid -->
-    <text x="0" y="105" class="telemetry-label">SECURE ENCLAVE</text>
-    <text x="140" y="105" class="telemetry-val">ACTIVE</text>
-    <circle cx="230" cy="101" r="4.5" class="status-light" />
-    
-    <!-- Progress CPU usage -->
-    <text x="0" y="130" class="telemetry-label">LLM SEC SHIELD</text>
-    <text x="140" y="130" class="telemetry-val">ON (92%)</text>
-    <rect x="0" y="138" width="230" height="6" class="progress-bar-bg" />
-    <rect x="0" y="138" width="211" height="6" class="progress-bar-fill-cyan" />
-    
-    <!-- Progress Threat Level -->
-    <text x="0" y="165" class="telemetry-label">SYS THREAT INDEX</text>
-    <text x="140" y="165" class="telemetry-val" style="fill: #00f0ff;">0.00%</text>
-    <rect x="0" y="173" width="230" height="6" class="progress-bar-bg" />
-    <rect x="0" y="173" width="5" height="6" class="progress-bar-fill-purple" />
-    
-    <!-- Network Matrix / Wave -->
-    <text x="0" y="205" class="telemetry-label">SECURE SANDBOX TELEMETRY</text>
-    
-    <rect x="0" y="215" width="230" height="75" fill="#040507" stroke="#141923" stroke-width="1" rx="4" />
-    <!-- Oscilloscope Grid inside container -->
-    <g stroke="#0c0f18" stroke-width="0.5">
-      <line x1="0" y1="233" x2="230" y2="233" />
-      <line x1="0" y1="252" x2="230" y2="252" />
-      <line x1="0" y1="271" x2="230" y2="271" />
-      <line x1="38" y1="215" x2="38" y2="290" />
-      <line x1="76" y1="215" x2="76" y2="290" />
-      <line x1="114" y1="215" x2="114" y2="290" />
-      <line x1="152" y1="215" x2="152" y2="290" />
-      <line x1="190" y1="215" x2="190" y2="290" />
-    </g>
-    
-    <!-- Waveform Path -->
-    <path class="wave-line" d="M 5,252 Q 25,225 45,252 T 85,252 T 125,275 T 165,230 T 205,252 L 225,252" />
-    
-    <!-- Digital Decoders -->
-    <text x="5" y="315" class="mono-text" style="font-size: 8px; fill: #00ff66;">AUDIT: OK</text>
-    <text x="75" y="315" class="mono-text" style="font-size: 8px; fill: #00f0ff;">SANDBOX: SECURE</text>
-    <text x="160" y="315" class="mono-text" style="font-size: 8px; fill: #bd00ff; text-anchor: end;">AGENT_STABLE</text>
-    
-    <text x="0" y="340" class="mono-text" style="font-size: 9px; fill: #4b5b75;">IP_ADDR: [2001:0db8:85a3:0000:0000:8a2e:0370:7334]</text>
-  </g>
+  <!-- Separator line under header -->
+  <line x1="0" y1="42" x2="900" y2="42" stroke="#1a2233" stroke-width="2"/>
+  <line x1="0" y1="42" x2="900" y2="42" stroke="url(#headerGrad)" stroke-width="1" opacity="0.6"/>
+
+  <!-- SECTION LABEL -->
+  <text x="30" y="73" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">┌─────────────────────────────────────────────────────────────────────────────────────────┐</text>
+  <text x="30" y="91" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">│</text>
+  <text x="134" y="91" font-family="Courier New" font-size="13" fill="#00f0ff" font-weight="700" filter="url(#titleGlow)">◈  SYSTEM PROFILE — ANMOL RATHOD</text>
+  <text x="858" y="91" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">│</text>
+  <text x="30" y="109" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">└─────────────────────────────────────────────────────────────────────────────────────────┘</text>
+
+  <!-- Line 1 -->
+  <text x="30" y="135" font-family="Courier New" font-size="12.5" fill="#bd00ff" filter="url(#glow)">$</text>
+  <text x="48" y="135" font-family="Courier New" font-size="12.5" fill="#8b949e">cat /etc/profile.d/anmol.conf</text>
+
+  <!-- Line 2: Name -->
+  <text x="30" y="158" font-family="Courier New" font-size="12" fill="#00ff66">OPERATOR</text>
+  <text x="130" y="158" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
+  <text x="148" y="158" font-family="Courier New" font-size="12" fill="#ffffff" font-weight="600">"Anmol Rathod"</text>
+
+  <!-- Line 3: Role -->
+  <text x="30" y="178" font-family="Courier New" font-size="12" fill="#00ff66">ROLE</text>
+  <text x="130" y="178" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
+  <text x="148" y="178" font-family="Courier New" font-size="12" fill="#00f0ff">"AI Security Analyst &amp; LLM Security Researcher"</text>
+
+  <!-- Line 4: Focus -->
+  <text x="30" y="198" font-family="Courier New" font-size="12" fill="#00ff66">FOCUS</text>
+  <text x="130" y="198" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
+  <text x="148" y="198" font-family="Courier New" font-size="12" fill="#bd00ff">"AI Security · LLM Security · Cybersecurity · OSINT"</text>
+
+  <!-- Line 5: Status -->
+  <text x="30" y="218" font-family="Courier New" font-size="12" fill="#00ff66">STATUS</text>
+  <text x="130" y="218" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
+  <text x="148" y="218" font-family="Courier New" font-size="12" fill="#febc2e">"Actively building · Hunting AI threats · Open to collab"</text>
+
+  <!-- Line 6: Location -->
+  <text x="30" y="238" font-family="Courier New" font-size="12" fill="#00ff66">LOCATION</text>
+  <text x="130" y="238" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
+  <text x="148" y="238" font-family="Courier New" font-size="12" fill="#ffffff">"India 🇮🇳 · GMT+5:30"</text>
+
+  <!-- Line 7: Contact -->
+  <text x="30" y="258" font-family="Courier New" font-size="12" fill="#00ff66">CONTACT</text>
+  <text x="130" y="258" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
+  <text x="148" y="258" font-family="Courier New" font-size="12" fill="#00f0ff">"anmolrathod15007@gmail.com"</text>
+
+  <!-- Blinking cursor line -->
+  <text x="30" y="285" font-family="Courier New" font-size="12.5" fill="#00f0ff" filter="url(#glow)">$</text>
+  <text x="48" y="285" font-family="Courier New" font-size="12.5" fill="#8b949e">_</text>
+  <rect x="54" y="272" width="9" height="16" fill="#00f0ff" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0;0.9" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Right panel: Live indicator -->
+  <circle cx="855" cy="72" r="5" fill="#00ff66" filter="url(#glow)">
+    <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="840" y="77" font-family="Courier New" font-size="9" fill="#00ff66" text-anchor="end">LIVE</text>
+
+  <!-- Right panel: Progress bars for skills -->
+  <text x="640" y="140" font-family="Courier New" font-size="9" fill="#8b949e">AI SECURITY</text>
+  <rect x="730" y="128" width="145" height="8" rx="4" fill="#1a2233"/>
+  <rect x="730" y="128" width="130" height="8" rx="4" fill="url(#headerGrad)" opacity="0.8"/>
+  <text x="880" y="138" font-family="Courier New" font-size="9" fill="#00f0ff">90%</text>
+
+  <text x="640" y="160" font-family="Courier New" font-size="9" fill="#8b949e">LLM SECURITY</text>
+  <rect x="730" y="148" width="145" height="8" rx="4" fill="#1a2233"/>
+  <rect x="730" y="148" width="115" height="8" rx="4" fill="#bd00ff" opacity="0.8"/>
+  <text x="880" y="158" font-family="Courier New" font-size="9" fill="#bd00ff">80%</text>
+
+  <text x="640" y="180" font-family="Courier New" font-size="9" fill="#8b949e">PENTESTING</text>
+  <rect x="730" y="168" width="145" height="8" rx="4" fill="#1a2233"/>
+  <rect x="730" y="168" width="105" height="8" rx="4" fill="#00ff66" opacity="0.8"/>
+  <text x="880" y="178" font-family="Courier New" font-size="9" fill="#00ff66">72%</text>
+
+  <text x="640" y="200" font-family="Courier New" font-size="9" fill="#8b949e">PYTHON DEV</text>
+  <rect x="730" y="188" width="145" height="8" rx="4" fill="#1a2233"/>
+  <rect x="730" y="188" width="120" height="8" rx="4" fill="#febc2e" opacity="0.8"/>
+  <text x="880" y="198" font-family="Courier New" font-size="9" fill="#febc2e">83%</text>
+
+  <text x="640" y="220" font-family="Courier New" font-size="9" fill="#8b949e">OSINT</text>
+  <rect x="730" y="208" width="145" height="8" rx="4" fill="#1a2233"/>
+  <rect x="730" y="208" width="110" height="8" rx="4" fill="#ff5f57" opacity="0.8"/>
+  <text x="880" y="218" font-family="Courier New" font-size="9" fill="#ff5f57">76%</text>
+
+  <!-- Vertical separator -->
+  <line x1="620" y1="120" x2="620" y2="270" stroke="#1a2233" stroke-width="1"/>
+
+  <!-- Border -->
+  <rect width="900" height="320" fill="none" stroke="#1a2233" stroke-width="2" rx="10"/>
+  <rect width="900" height="320" fill="none" stroke="url(#headerGrad)" stroke-width="1" rx="10" opacity="0.3"/>
 </svg>
