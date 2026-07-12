@@ -56,106 +56,59 @@
 
 <br />
 
-<table align="center" width="100%" border="0" cellpadding="5">
+<table align="center" width="100%" border="0" cellpadding="12" cellspacing="0">
+  <!-- AI & Machine Learning -->
   <tr>
-    <td width="50%" valign="top">
-      <h3>🤖 [AI &amp; MACHINE LEARNING]</h3>
-      <img src="https://img.shields.io/badge/Python-%23bd00ff?style=flat-square&logo=Python&logoColor=white" alt="Python" />
-      <img src="https://img.shields.io/badge/Machine%20Learning-%23bd00ff?style=flat-square&logo=ScikitLearn&logoColor=white" alt="Machine Learning" />
-      <img src="https://img.shields.io/badge/Deep%20Learning-%23bd00ff?style=flat-square&logo=TensorFlow&logoColor=white" alt="Deep Learning" />
-      <img src="https://img.shields.io/badge/Generative%20AI-%23bd00ff?style=flat-square&logo=OpenAI&logoColor=white" alt="Generative AI" />
-      <img src="https://img.shields.io/badge/Agentic%20AI-%23bd00ff?style=flat-square&logo=Google&logoColor=white" alt="Agentic AI" />
-      <img src="https://img.shields.io/badge/Prompt%20Eng-%23bd00ff?style=flat-square&logo=Anthropic&logoColor=white" alt="Prompt Engineering" />
-      <img src="https://img.shields.io/badge/LLM-%23bd00ff?style=flat-square&logo=Meta&logoColor=white" alt="LLM" />
-      <img src="https://img.shields.io/badge/RAG-%23bd00ff?style=flat-square&logo=Databricks&logoColor=white" alt="RAG" />
-      <img src="https://img.shields.io/badge/Vector%20DB-%23bd00ff?style=flat-square&logo=Redis&logoColor=white" alt="Vector Databases" />
-      <img src="https://img.shields.io/badge/AI%20Dev-%23bd00ff?style=flat-square&logo=GitHubCopilot&logoColor=white" alt="AI Assisted Development" />
+    <td width="12%" align="center" valign="middle">
+      <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Robot/3D/robot_3d.png" width="55" alt="AI &amp; ML" />
     </td>
-    <td width="50%" valign="top">
-      <h3>🛡️ [AI SECURITY]</h3>
-      <img src="https://img.shields.io/badge/PyRIT-%2300ff66?style=flat-square&logo=Microsoft&logoColor=black" alt="PyRIT" />
-      <img src="https://img.shields.io/badge/Garak-%2300ff66?style=flat-square&logo=LinuxFoundation&logoColor=black" alt="Garak" />
-      <img src="https://img.shields.io/badge/IBM%20ART-%2300ff66?style=flat-square&logo=IBM&logoColor=black" alt="IBM ART" />
-      <img src="https://img.shields.io/badge/OWASP%20LLM%20Top%2010-%2300ff66?style=flat-square&logo=OWASP&logoColor=black" alt="OWASP LLM Top 10" />
-      <img src="https://img.shields.io/badge/MITRE%20ATLAS-%2300ff66?style=flat-square&logo=Target&logoColor=black" alt="MITRE ATLAS" />
-      <img src="https://img.shields.io/badge/Prompt%20Injection-%2300ff66?style=flat-square&logo=Dependabot&logoColor=black" alt="Prompt Injection" />
-      <img src="https://img.shields.io/badge/Model%20Jailbreaking-%2300ff66?style=flat-square&logo=SecurityScorecard&logoColor=black" alt="Model Jailbreaking" />
-      <img src="https://img.shields.io/badge/Secure%20AI-%2300ff66?style=flat-square&logo=Snyk&logoColor=black" alt="Secure AI" />
+    <td width="88%" valign="middle">
+      <strong><font size="4" color="#bd00ff">🤖 [ AI &amp; MACHINE LEARNING ]</font></strong><br />
+      <code>Python</code> <code>Machine Learning</code> <code>Deep Learning</code> <code>Generative AI</code> <code>Agentic AI</code> <code>Prompt Engineering</code> <code>LLM</code> <code>RAG</code> <code>Vector Databases</code> <code>AI Assisted Dev</code>
     </td>
   </tr>
+  
+  <!-- AI Security -->
   <tr>
-    <td width="50%" valign="top">
-      <h3>📡 [CYBER SECURITY]</h3>
-      <img src="https://img.shields.io/badge/Nmap-%2300f0ff?style=flat-square&logo=Opsgenie&logoColor=black" alt="Nmap" />
-      <img src="https://img.shields.io/badge/Wireshark-%2300f0ff?style=flat-square&logo=Wireshark&logoColor=black" alt="Wireshark" />
-      <img src="https://img.shields.io/badge/Burp%20Suite-%2300f0ff?style=flat-square&logo=PortSwigger&logoColor=black" alt="Burp Suite" />
-      <img src="https://img.shields.io/badge/Metasploit-%2300f0ff?style=flat-square&logo=Metasploit&logoColor=black" alt="Metasploit" />
-      <img src="https://img.shields.io/badge/Kali%20Linux-%2300f0ff?style=flat-square&logo=KaliLinux&logoColor=black" alt="Kali Linux" />
-      <img src="https://img.shields.io/badge/Linux-%2300f0ff?style=flat-square&logo=Linux&logoColor=black" alt="Linux" />
-      <img src="https://img.shields.io/badge/Networking-%2300f0ff?style=flat-square&logo=Cisco&logoColor=black" alt="Networking" />
-      <img src="https://img.shields.io/badge/TCP/IP-%2300f0ff?style=flat-square&logo=JuniperNetworks&logoColor=black" alt="TCP/IP" />
-      <img src="https://img.shields.io/badge/OSI%20Model-%2300f0ff?style=flat-square&logo=HashiCorp&logoColor=black" alt="OSI" />
-      <img src="https://img.shields.io/badge/Subnetting-%2300f0ff?style=flat-square&logo=PaloAltoNetworks&logoColor=black" alt="Subnetting" />
+    <td align="center" valign="middle">
+      <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shield/3D/shield_3d.png" width="55" alt="AI Security" />
     </td>
-    <td width="50%" valign="top">
-      <h3>🔍 [OSINT &amp; RECON]</h3>
-      <img src="https://img.shields.io/badge/Shodan-%2300f0ff?style=flat-square&logo=Opsgenie&logoColor=black" alt="Shodan" />
-      <img src="https://img.shields.io/badge/Maltego-%2300f0ff?style=flat-square&logo=Neo4j&logoColor=black" alt="Maltego" />
-      <img src="https://img.shields.io/badge/SpiderFoot-%2300f0ff?style=flat-square&logo=Scrapy&logoColor=black" alt="SpiderFoot" />
-      <img src="https://img.shields.io/badge/Recon--ng-%2300f0ff?style=flat-square&logo=DuckDuckGo&logoColor=black" alt="Recon-ng" />
-      <img src="https://img.shields.io/badge/Google%20Dorking-%2300f0ff?style=flat-square&logo=Google&logoColor=black" alt="Google Dorking" />
-      <img src="https://img.shields.io/badge/theHarvester-%2300f0ff?style=flat-square&logo=Hunter&logoColor=black" alt="theHarvester" />
-      <img src="https://img.shields.io/badge/OSINT%20Framework-%2300f0ff?style=flat-square&logo=HackTheBox&logoColor=black" alt="OSINT Framework" />
+    <td valign="middle">
+      <strong><font size="4" color="#00ff66">🛡️ [ AI SECURITY ]</font></strong><br />
+      <code>PyRIT</code> <code>Garak</code> <code>IBM ART</code> <code>OWASP LLM Top 10</code> <code>MITRE ATLAS</code> <code>Prompt Injection</code> <code>Model Jailbreaking</code> <code>Secure AI</code>
     </td>
   </tr>
+
+  <!-- Cyber Security & SOC -->
   <tr>
-    <td width="50%" valign="top">
-      <h3>🕶️ [OPSEC &amp; PRIVACY]</h3>
-      <img src="https://img.shields.io/badge/Tor-%2300f0ff?style=flat-square&logo=TorProject&logoColor=black" alt="Tor" />
-      <img src="https://img.shields.io/badge/Tails-%2300f0ff?style=flat-square&logo=Tails&logoColor=black" alt="Tails" />
-      <img src="https://img.shields.io/badge/Whonix-%2300f0ff?style=flat-square&logo=Debian&logoColor=black" alt="Whonix" />
-      <img src="https://img.shields.io/badge/ProxyChains-%2300f0ff?style=flat-square&logo=OpenVPN&logoColor=black" alt="ProxyChains" />
-      <img src="https://img.shields.io/badge/VPN-%2300f0ff?style=flat-square&logo=NordVPN&logoColor=black" alt="VPN" />
-      <img src="https://img.shields.io/badge/VeraCrypt-%2300f0ff?style=flat-square&logo=KeePassXC&logoColor=black" alt="VeraCrypt" />
+    <td align="center" valign="middle">
+      <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Desktop%20computer/3D/desktop_computer_3d.png" width="55" alt="Cyber Security &amp; SOC" />
     </td>
-    <td width="50%" valign="top">
-      <h3>🏢 [SOC OPERATIONS]</h3>
-      <img src="https://img.shields.io/badge/Splunk-%2300f0ff?style=flat-square&logo=Splunk&logoColor=black" alt="Splunk" />
-      <img src="https://img.shields.io/badge/Wazuh-%2300f0ff?style=flat-square&logo=SecurityScorecard&logoColor=black" alt="Wazuh" />
-      <img src="https://img.shields.io/badge/ELK-%2300f0ff?style=flat-square&logo=Elasticsearch&logoColor=black" alt="ELK" />
-      <img src="https://img.shields.io/badge/MITRE%20ATT%26CK-%2300f0ff?style=flat-square&logo=Target&logoColor=black" alt="MITRE ATT&amp;CK" />
-      <img src="https://img.shields.io/badge/TheHive-%2300f0ff?style=flat-square&logo=Hive&logoColor=black" alt="TheHive" />
-      <img src="https://img.shields.io/badge/MISP-%2300f0ff?style=flat-square&logo=OpenCTI&logoColor=black" alt="MISP" />
+    <td valign="middle">
+      <strong><font size="4" color="#00f0ff">📡 [ CYBER SECURITY &amp; SOC ]</font></strong><br />
+      <code>Linux</code> <code>Kali Linux</code> <code>Nmap</code> <code>Wireshark</code> <code>Burp Suite</code> <code>Metasploit</code> <code>Splunk</code> <code>Wazuh</code> <code>ELK Stack</code> <code>MITRE ATT&amp;CK</code> <code>TheHive</code> <code>MISP</code> <code>Networking</code> <code>TCP/IP</code> <code>OSI Model</code> <code>Subnetting</code>
     </td>
   </tr>
+
+  <!-- OSINT & OPSEC -->
   <tr>
-    <td width="50%" valign="top">
-      <h3>💻 [DEVELOPMENT]</h3>
-      <img src="https://img.shields.io/badge/React-%23bd00ff?style=flat-square&logo=React&logoColor=white" alt="React" />
-      <img src="https://img.shields.io/badge/FastAPI-%23bd00ff?style=flat-square&logo=FastAPI&logoColor=white" alt="FastAPI" />
-      <img src="https://img.shields.io/badge/Docker-%23bd00ff?style=flat-square&logo=Docker&logoColor=white" alt="Docker" />
-      <img src="https://img.shields.io/badge/Git-%23bd00ff?style=flat-square&logo=Git&logoColor=white" alt="Git" />
-      <img src="https://img.shields.io/badge/GitHub-%23bd00ff?style=flat-square&logo=GitHub&logoColor=white" alt="GitHub" />
-      <img src="https://img.shields.io/badge/VS%20Code-%23bd00ff?style=flat-square&logo=Visual%20Studio%20Code&logoColor=white" alt="VS Code" />
-      <img src="https://img.shields.io/badge/HTML-%23bd00ff?style=flat-square&logo=HTML5&logoColor=white" alt="HTML" />
-      <img src="https://img.shields.io/badge/CSS-%23bd00ff?style=flat-square&logo=CSS3&logoColor=white" alt="CSS" />
-      <img src="https://img.shields.io/badge/JavaScript-%23bd00ff?style=flat-square&logo=JavaScript&logoColor=white" alt="JavaScript" />
-      <img src="https://img.shields.io/badge/Python-%23bd00ff?style=flat-square&logo=Python&logoColor=white" alt="Python" />
-      <img src="https://img.shields.io/badge/C-%23bd00ff?style=flat-square&logo=C&logoColor=white" alt="C" />
-      <img src="https://img.shields.io/badge/C%2B%2B-%23bd00ff?style=flat-square&logo=C%2B%2B&logoColor=white" alt="C++" />
-      <img src="https://img.shields.io/badge/Bash-%23bd00ff?style=flat-square&logo=GNUBash&logoColor=white" alt="Bash" />
+    <td align="center" valign="middle">
+      <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Locked/3D/locked_3d.png" width="55" alt="OSINT &amp; OPSEC" />
     </td>
-    <td width="50%" valign="top">
-      <h3>💿 [OPERATING SYSTEMS]</h3>
-      <img src="https://img.shields.io/badge/Linux-%23bd00ff?style=flat-square&logo=Linux&logoColor=white" alt="Linux" />
-      <img src="https://img.shields.io/badge/Kali%20Linux-%23bd00ff?style=flat-square&logo=KaliLinux&logoColor=white" alt="Kali Linux" />
-      <img src="https://img.shields.io/badge/Fedora-%23bd00ff?style=flat-square&logo=Fedora&logoColor=white" alt="Fedora" />
-      <img src="https://img.shields.io/badge/Windows-%23bd00ff?style=flat-square&logo=Windows&logoColor=white" alt="Windows" />
-      <br /><br />
-      <h3>🌐 [LANGUAGES]</h3>
-      <img src="https://img.shields.io/badge/English-%23bd00ff?style=flat-square&logo=ReadTheDocs&logoColor=white" alt="English" />
-      <img src="https://img.shields.io/badge/Hindi-%23bd00ff?style=flat-square&logo=GoogleTranslate&logoColor=white" alt="Hindi" />
-      <img src="https://img.shields.io/badge/Gujarati-%23bd00ff?style=flat-square&logo=GoogleTranslate&logoColor=white" alt="Gujarati" />
+    <td valign="middle">
+      <strong><font size="4" color="#00f0ff">🕵️ [ OSINT &amp; OPSEC ]</font></strong><br />
+      <code>Shodan</code> <code>Maltego</code> <code>SpiderFoot</code> <code>Recon-ng</code> <code>Google Dorking</code> <code>theHarvester</code> <code>OSINT Framework</code> <code>Tor</code> <code>Tails</code> <code>Whonix</code> <code>ProxyChains</code> <code>VPN</code> <code>VeraCrypt</code>
+    </td>
+  </tr>
+
+  <!-- Development & Platforms -->
+  <tr>
+    <td align="center" valign="middle">
+      <img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Laptop/3D/laptop_3d.png" width="55" alt="Development" />
+    </td>
+    <td valign="middle">
+      <strong><font size="4" color="#ffffff">💻 [ DEVELOPMENT &amp; ENVIRONMENTS ]</font></strong><br />
+      <code>React</code> <code>FastAPI</code> <code>Docker</code> <code>Git</code> <code>GitHub</code> <code>VS Code</code> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>C</code> <code>C++</code> <code>Bash</code> <code>Fedora</code> <code>Windows</code> <code>English</code> <code>Hindi</code> <code>Gujarati</code>
     </td>
   </tr>
 </table>
@@ -206,44 +159,6 @@
 </p>
 <br />
 
-<!-- ==================== FEATURED PROJECTS ==================== -->
-<h2 align="center">🚀 [ FEATURED PROJECTS ] 🚀</h2>
-
-<br />
-
-<!-- 2x2 Responsive Project Dashboard -->
-<table align="center" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" style="padding: 10px;">
-      <a href="https://github.com/anmol-infinex/ScamShield">
-        <img src="assets/project-scamshield.svg" alt="ScamShield Card" width="380" />
-      </a>
-    </td>
-    <td align="center" style="padding: 10px;">
-      <a href="https://github.com/anmol-infinex/VACTOR">
-        <img src="assets/project-vactor.svg" alt="VACTOR Card" width="380" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="padding: 10px;">
-      <a href="https://github.com/anmol-infinex/Secure-AI-Toolkit">
-        <img src="assets/project-secure-ai.svg" alt="Secure AI Toolkit Card" width="380" />
-      </a>
-    </td>
-    <td align="center" style="padding: 10px;">
-      <a href="https://github.com/anmol-infinex/Cyber-Lab-Tools">
-        <img src="assets/project-cyber-lab.svg" alt="Cyber Lab Tools Card" width="380" />
-      </a>
-    </td>
-  </tr>
-</table>
-
-<br />
-<p align="center">
-  <img src="assets/divider.svg" alt="Divider" width="100%" />
-</p>
-<br />
 
 <!-- ==================== CURRENT MISSION ==================== -->
 <h2 align="center">🎯 [ TARGET TIMELINE / MISSION ] 🎯</h2>
