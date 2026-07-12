@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 25" width="100%">
+  <defs>
+    <linearGradient id="div-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bd00ff" stop-opacity="0" />
+      <stop offset="20%" stop-color="#bd00ff" stop-opacity="0.8" />
+      <stop offset="45%" stop-color="#00f0ff" stop-opacity="1" />
+      <stop offset="50%" stop-color="#00ff66" stop-opacity="1" />
+      <stop offset="55%" stop-color="#00f0ff" stop-opacity="1" />
+      <stop offset="80%" stop-color="#bd00ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#bd00ff" stop-opacity="0" />
+    </linearGradient>
+    
+    <filter id="glow-cyan">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Horizontal divider line -->
+  <line x1="10" y1="12" x2="840" y2="12" stroke="url(#div-grad)" stroke-width="1.5" />
+  
+  <!-- Cyber brackets in the center -->
+  <g transform="translate(425, 12)">
+    <!-- Outer hexagons/brackets -->
+    <path d="M -30 -6 L -20 -10 L 20 -10 L 30 -6 M -30 6 L -20 10 L 20 10 L 30 6" fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.6" />
+    
+    <!-- Central diamond -->
+    <polygon points="-12,0 0,-7 12,0 0,7" fill="#08090f" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-cyan)" />
+    
+    <!-- Pulse dot -->
+    <circle cx="0" cy="0" r="2.5" fill="#00ff66" />
+    
+    <!-- Wings -->
+    <line x1="-50" y1="0" x2="-35" y2="0" stroke="#bd00ff" stroke-width="1.5" />
+    <line x1="35" y1="0" x2="50" y2="0" stroke="#bd00ff" stroke-width="1.5" stroke-dasharray="2, 2" />
+  </g>
+</svg>

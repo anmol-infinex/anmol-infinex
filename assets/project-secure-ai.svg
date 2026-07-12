@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 190" width="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+      
+      .card-bg {
+        fill: #07090e;
+        stroke: #00ff66;
+        stroke-width: 1.5;
+      }
+      
+      .tech-grid {
+        stroke: #121824;
+        stroke-width: 0.5;
+      }
+      
+      .title {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 900;
+        fill: #00ff66;
+        font-size: 19px;
+        letter-spacing: 1.5px;
+        filter: drop-shadow(0 0 4px rgba(0, 255, 102, 0.4));
+      }
+      
+      .desc {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 13px;
+        fill: #8f9bb3;
+      }
+      
+      .tag-bg {
+        fill: #0b111e;
+        stroke: #1f2d47;
+        stroke-width: 1;
+        rx: 3;
+      }
+      
+      .tag-text {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 11px;
+        fill: #bd00ff;
+      }
+      
+      .decor-box {
+        fill: #00ff66;
+        opacity: 0.7;
+      }
+      
+      .scanner {
+        stroke: #00ff66;
+        stroke-width: 1.5;
+        opacity: 0.3;
+        animation: scan-card 4s infinite ease-in-out;
+      }
+      
+      @keyframes scan-card {
+        0%, 100% { y1: 15; y2: 15; }
+        50% { y1: 175; y2: 175; }
+      }
+    </style>
+  </defs>
+
+  <!-- Card Border & Background -->
+  <rect x="5" y="5" width="380" height="180" rx="6" class="card-bg" />
+  
+  <!-- Subtle Internal Grid -->
+  <g class="tech-grid">
+    <line x1="5" y1="35" x2="385" y2="35" />
+    <line x1="5" y1="150" x2="385" y2="150" />
+    <line x1="120" y1="5" x2="120" y2="185" />
+  </g>
+
+  <!-- Cyber corners -->
+  <path d="M 15 15 L 25 15 M 15 15 L 15 25" stroke="#00ff66" stroke-width="2" fill="none" />
+  <path d="M 375 15 L 365 15 M 375 15 L 375 25" stroke="#00ff66" stroke-width="2" fill="none" />
+  <path d="M 15 175 L 25 175 M 15 175 L 15 165" stroke="#00ff66" stroke-width="2" fill="none" />
+  <path d="M 375 175 L 365 175 M 375 175 L 375 165" stroke="#00ff66" stroke-width="2" fill="none" />
+
+  <!-- Animated Scanner line -->
+  <line x1="10" y1="15" x2="380" y2="15" class="scanner" />
+
+  <!-- Header -->
+  <rect x="15" y="45" width="10" height="10" class="decor-box" />
+  <text x="35" y="55" class="title">SECURE AI TOOLKIT</text>
+  
+  <text x="345" y="52" font-family="Share Tech Mono" font-size="10" fill="#4b5b75" text-anchor="end">SYS_TYPE: RED_TEAM</text>
+  <circle cx="365" cy="49" r="3.5" fill="#bd00ff" />
+
+  <!-- Description -->
+  <g class="desc" transform="translate(20, 75)">
+    <text x="0" y="10">🛡️ LLM security auditing &amp; red-teaming.</text>
+    <text x="0" y="30">🧬 Mitigates prompt injection, jailbreaking,</text>
+    <text x="0" y="50">    and model vulnerability exploits.</text>
+  </g>
+
+  <!-- Tags / Skills bottom -->
+  <g transform="translate(20, 155)">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="95" height="20" class="tag-bg" />
+      <text x="47" y="14" class="tag-text" text-anchor="middle">LLM Security</text>
+    </g>
+    <g transform="translate(105, 0)">
+      <rect x="0" y="0" width="115" height="20" class="tag-bg" />
+      <text x="57" y="14" class="tag-text" text-anchor="middle">Prompt Injection</text>
+    </g>
+    <g transform="translate(230, 0)">
+      <rect x="0" y="0" width="85" height="20" class="tag-bg" />
+      <text x="42" y="14" class="tag-text" text-anchor="middle">Red Teaming</text>
+    </g>
+  </g>
+
+  <!-- Bottom right technical telemetry -->
+  <text x="370" y="170" font-family="Share Tech Mono" font-size="9" fill="#2e3b52" text-anchor="end">BUILD: RED_V0.5</text>
+</svg>

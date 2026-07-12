@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Share+Tech+Mono&amp;display=swap');
+      
+      .roadmap-bg {
+        fill: #06070b;
+        stroke: #1a2233;
+        stroke-width: 1.5;
+      }
+      
+      .conn-line {
+        stroke: #141b29;
+        stroke-width: 4;
+        stroke-linecap: round;
+      }
+      
+      .conn-line-active {
+        stroke: url(#line-grad);
+        stroke-width: 3;
+        stroke-linecap: round;
+        filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.4));
+      }
+      
+      .node-outer {
+        fill: #080a10;
+        stroke: #00f0ff;
+        stroke-width: 1.5;
+        cursor: pointer;
+      }
+      
+      .node-outer-current {
+        fill: #080a10;
+        stroke: #00ff66;
+        stroke-width: 2;
+        filter: drop-shadow(0 0 6px rgba(0, 255, 102, 0.6));
+        animation: pulse-node 2s infinite alternate;
+      }
+      
+      .node-inner {
+        fill: #00f0ff;
+      }
+      
+      .node-inner-current {
+        fill: #00ff66;
+      }
+      
+      .label-title {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        fill: #ffffff;
+        text-anchor: middle;
+      }
+      
+      .label-title-current {
+        fill: #00ff66;
+        filter: drop-shadow(0 0 3px rgba(0, 255, 102, 0.4));
+      }
+      
+      .label-sub {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 10px;
+        fill: #6c7a9c;
+        text-anchor: middle;
+      }
+      
+      .grid-dot {
+        fill: #141b29;
+      }
+      
+      @keyframes pulse-node {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.08); }
+      }
+      
+      .pulse-ring {
+        fill: none;
+        stroke: #00ff66;
+        stroke-width: 1;
+        opacity: 0.8;
+        animation: expand-ring 2s infinite linear;
+      }
+      
+      @keyframes expand-ring {
+        0% { r: 10; opacity: 1; }
+        100% { r: 25; opacity: 0; }
+      }
+    </style>
+    
+    <!-- Gradients & Filters -->
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#bd00ff" />
+      <stop offset="100%" stop-color="#00ff66" />
+    </linearGradient>
+    
+    <filter id="glow-green">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background container -->
+  <rect x="5" y="5" width="790" height="190" rx="8" class="roadmap-bg" />
+
+  <!-- Background decorative dot grid -->
+  <g class="grid-dot">
+    <circle cx="50" cy="30" r="1" /><circle cx="150" cy="30" r="1" /><circle cx="250" cy="30" r="1" /><circle cx="350" cy="30" r="1" /><circle cx="450" cy="30" r="1" /><circle cx="550" cy="30" r="1" /><circle cx="650" cy="30" r="1" /><circle cx="750" cy="30" r="1" />
+    <circle cx="50" cy="170" r="1" /><circle cx="150" cy="170" r="1" /><circle cx="250" cy="170" r="1" /><circle cx="350" cy="170" r="1" /><circle cx="450" cy="170" r="1" /><circle cx="550" cy="170" r="1" /><circle cx="650" cy="170" r="1" /><circle cx="750" cy="170" r="1" />
+  </g>
+  
+  <!-- Outer boundary brackets -->
+  <path d="M 20 15 L 12 15 L 12 23 M 780 15 L 788 15 L 788 23 M 12 177 L 12 185 L 20 185 M 788 177 L 788 185 L 780 185" fill="none" stroke="#2c3b59" stroke-width="1.5" />
+
+  <!-- Connecting Roadmap Lines -->
+  <line x1="80" y1="100" x2="720" y2="100" class="conn-line" />
+  <line x1="80" y1="100" x2="720" y2="100" class="conn-line-active" />
+
+  <!-- Animated pulsing tracking dot traversing the timeline -->
+  <circle r="4" fill="#00ff66" filter="url(#glow-green)">
+    <animateMotion dur="8s" repeatCount="indefinite" path="M 80,100 L 720,100" />
+  </circle>
+
+  <!-- ==================== NODE 1 ==================== -->
+  <g transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="12" class="node-outer" />
+    <circle cx="0" cy="0" r="5" class="node-inner" />
+    <text x="0" y="-35" class="label-title">LLM SEC TOOLS</text>
+    <text x="0" y="-22" class="label-sub">Phase_01 [Done]</text>
+  </g>
+
+  <!-- ==================== NODE 2 ==================== -->
+  <g transform="translate(250, 100)">
+    <circle cx="0" cy="0" r="12" class="node-outer" />
+    <circle cx="0" cy="0" r="5" class="node-inner" />
+    <text x="0" y="32" class="label-title">SECURE AI</text>
+    <text x="0" y="45" class="label-sub">Phase_02 [Active]</text>
+  </g>
+
+  <!-- ==================== NODE 3 ==================== -->
+  <g transform="translate(400, 100)">
+    <!-- Pulse ring for current phase -->
+    <circle cx="0" cy="0" r="10" class="pulse-ring" />
+    <circle cx="0" cy="0" r="12" class="node-outer-current" />
+    <circle cx="0" cy="0" r="5" class="node-inner-current" />
+    <!-- Glowing label for current target -->
+    <text x="0" y="-35" class="label-title label-title-current">AI RED TEAMING</text>
+    <text x="0" y="-22" class="label-sub">Phase_03 [Current]</text>
+  </g>
+
+  <!-- ==================== NODE 4 ==================== -->
+  <g transform="translate(550, 100)">
+    <circle cx="0" cy="0" r="12" class="node-outer" style="stroke: #bd00ff; opacity: 0.7;" />
+    <circle cx="0" cy="0" r="4" class="node-inner" style="fill: #bd00ff; opacity: 0.7;" />
+    <text x="0" y="32" class="label-title" style="opacity: 0.7;">OPEN SOURCE</text>
+    <text x="0" y="45" class="label-sub">Phase_04 [Queue]</text>
+  </g>
+
+  <!-- ==================== NODE 5 ==================== -->
+  <g transform="translate(700, 100)">
+    <circle cx="0" cy="0" r="12" class="node-outer" style="stroke: #bd00ff; opacity: 0.7;" />
+    <circle cx="0" cy="0" r="4" class="node-inner" style="fill: #bd00ff; opacity: 0.7;" />
+    <text x="0" y="-35" class="label-title" style="opacity: 0.7;">INTERNSHIP</text>
+    <text x="0" y="-22" class="label-sub">Phase_05 [Goal]</text>
+  </g>
+  
+  <!-- Diagnostic Telemetry details -->
+  <text x="25" y="160" font-family="Share Tech Mono" font-size="9" fill="#2c3b59">MAP_COORD: [ANMOL_SEC_PATH_2026]</text>
+  <text x="775" y="160" font-family="Share Tech Mono" font-size="9" fill="#2c3b59" text-anchor="end">STATUS: EXECUTION_ONGOING</text>
+</svg>
