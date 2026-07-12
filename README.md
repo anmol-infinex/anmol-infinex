@@ -64,7 +64,16 @@
     </td>
     <td width="88%" valign="middle">
       <strong><font size="4" color="#bd00ff">🤖 [ AI &amp; MACHINE LEARNING ]</font></strong><br />
-      <code>Python</code> <code>Machine Learning</code> <code>Deep Learning</code> <code>Generative AI</code> <code>Agentic AI</code> <code>Prompt Engineering</code> <code>LLM</code> <code>RAG</code> <code>Vector Databases</code> <code>AI Assisted Dev</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Snake/3D/snake_3d.png" width="16" height="16" align="absmiddle" /> Python</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Brain/3D/brain_3d.png" width="16" height="16" align="absmiddle" /> Machine Learning</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/DNA/3D/dna_3d.png" width="16" height="16" align="absmiddle" /> Deep Learning</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Robot/3D/robot_3d.png" width="16" height="16" align="absmiddle" /> Generative AI</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Sparkles/3D/sparkles_3d.png" width="16" height="16" align="absmiddle" /> Agentic AI</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Memo/3D/memo_3d.png" width="16" height="16" align="absmiddle" /> Prompt Engineering</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Speech%20balloon/3D/speech_balloon_3d.png" width="16" height="16" align="absmiddle" /> LLM</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Books/3D/books_3d.png" width="16" height="16" align="absmiddle" /> RAG</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Card%20index/3D/card_index_3d.png" width="16" height="16" align="absmiddle" /> Vector Databases</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Laptop/3D/laptop_3d.png" width="16" height="16" align="absmiddle" /> AI Assisted Dev</code>
     </td>
   </tr>
   
@@ -75,7 +84,14 @@
     </td>
     <td valign="middle">
       <strong><font size="4" color="#00ff66">🛡️ [ AI SECURITY ]</font></strong><br />
-      <code>PyRIT</code> <code>Garak</code> <code>IBM ART</code> <code>OWASP LLM Top 10</code> <code>MITRE ATLAS</code> <code>Prompt Injection</code> <code>Model Jailbreaking</code> <code>Secure AI</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Red%20triangle%20pointed%20up/3D/red_triangle_pointed_up_3d.png" width="16" height="16" align="absmiddle" /> PyRIT</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Ogre/3D/ogre_3d.png" width="16" height="16" align="absmiddle" /> Garak</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shield/3D/shield_3d.png" width="16" height="16" align="absmiddle" /> IBM ART</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Warning/3D/warning_3d.png" width="16" height="16" align="absmiddle" /> OWASP LLM Top 10</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Compass/3D/compass_3d.png" width="16" height="16" align="absmiddle" /> MITRE ATLAS</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Syringe/3D/syringe_3d.png" width="16" height="16" align="absmiddle" /> Prompt Injection</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Key/3D/key_3d.png" width="16" height="16" align="absmiddle" /> Model Jailbreaking</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Locked/3D/locked_3d.png" width="16" height="16" align="absmiddle" /> Secure AI</code>
     </td>
   </tr>
 
@@ -86,7 +102,22 @@
     </td>
     <td valign="middle">
       <strong><font size="4" color="#00f0ff">📡 [ CYBER SECURITY &amp; SOC ]</font></strong><br />
-      <code>Linux</code> <code>Kali Linux</code> <code>Nmap</code> <code>Wireshark</code> <code>Burp Suite</code> <code>Metasploit</code> <code>Splunk</code> <code>Wazuh</code> <code>ELK Stack</code> <code>MITRE ATT&amp;CK</code> <code>TheHive</code> <code>MISP</code> <code>Networking</code> <code>TCP/IP</code> <code>OSI Model</code> <code>Subnetting</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Penguin/3D/penguin_3d.png" width="16" height="16" align="absmiddle" /> Linux</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Dragon/3D/dragon_3d.png" width="16" height="16" align="absmiddle" /> Kali Linux</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Satellite%20antenna/3D/satellite_antenna_3d.png" width="16" height="16" align="absmiddle" /> Nmap</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shark/3D/shark_3d.png" width="16" height="16" align="absmiddle" /> Wireshark</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Honeybee/3D/honeybee_3d.png" width="16" height="16" align="absmiddle" /> Burp Suite</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Bomb/3D/bomb_3d.png" width="16" height="16" align="absmiddle" /> Metasploit</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Chart%20increasing/3D/chart_increasing_3d.png" width="16" height="16" align="absmiddle" /> Splunk</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Eye/3D/eye_3d.png" width="16" height="16" align="absmiddle" /> Wazuh</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Magnifying%20glass%20tilt%20left/3D/magnifying_glass_tilt_left_3d.png" width="16" height="16" align="absmiddle" /> ELK Stack</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Direct%20hit/3D/direct_hit_3d.png" width="16" height="16" align="absmiddle" /> MITRE ATT&amp;CK</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Cabinet/3D/cabinet_3d.png" width="16" height="16" align="absmiddle" /> TheHive</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Spider%20web/3D/spider_web_3d.png" width="16" height="16" align="absmiddle" /> MISP</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Link/3D/link_3d.png" width="16" height="16" align="absmiddle" /> Networking</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Electric%20plug/3D/electric_plug_3d.png" width="16" height="16" align="absmiddle" /> TCP/IP</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Gear/3D/gear_3d.png" width="16" height="16" align="absmiddle" /> OSI Model</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Toolbox/3D/toolbox_3d.png" width="16" height="16" align="absmiddle" /> Subnetting</code>
     </td>
   </tr>
 
@@ -97,7 +128,19 @@
     </td>
     <td valign="middle">
       <strong><font size="4" color="#00f0ff">🕵️ [ OSINT &amp; OPSEC ]</font></strong><br />
-      <code>Shodan</code> <code>Maltego</code> <code>SpiderFoot</code> <code>Recon-ng</code> <code>Google Dorking</code> <code>theHarvester</code> <code>OSINT Framework</code> <code>Tor</code> <code>Tails</code> <code>Whonix</code> <code>ProxyChains</code> <code>VPN</code> <code>VeraCrypt</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Telescope/3D/telescope_3d.png" width="16" height="16" align="absmiddle" /> Shodan</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Spider/3D/spider_3d.png" width="16" height="16" align="absmiddle" /> Maltego</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Spider%20web/3D/spider_web_3d.png" width="16" height="16" align="absmiddle" /> SpiderFoot</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Binoculars/3D/binoculars_3d.png" width="16" height="16" align="absmiddle" /> Recon-ng</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Magnifying%20glass%20tilt%20left/3D/magnifying_glass_tilt_left_3d.png" width="16" height="16" align="absmiddle" /> Google Dorking</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Tractor/3D/tractor_3d.png" width="16" height="16" align="absmiddle" /> theHarvester</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Globe%20with%20meridians/3D/globe_with_meridians_3d.png" width="16" height="16" align="absmiddle" /> OSINT Framework</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Onion/3D/onion_3d.png" width="16" height="16" align="absmiddle" /> Tor</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Water%20wave/3D/water_wave_3d.png" width="16" height="16" align="absmiddle" /> Tails</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Shield/3D/shield_3d.png" width="16" height="16" align="absmiddle" /> Whonix</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Chains/3D/chains_3d.png" width="16" height="16" align="absmiddle" /> ProxyChains</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Key/3D/key_3d.png" width="16" height="16" align="absmiddle" /> VPN</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Locked/3D/locked_3d.png" width="16" height="16" align="absmiddle" /> VeraCrypt</code>
     </td>
   </tr>
 
@@ -108,7 +151,24 @@
     </td>
     <td valign="middle">
       <strong><font size="4" color="#ffffff">💻 [ DEVELOPMENT &amp; ENVIRONMENTS ]</font></strong><br />
-      <code>React</code> <code>FastAPI</code> <code>Docker</code> <code>Git</code> <code>GitHub</code> <code>VS Code</code> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>C</code> <code>C++</code> <code>Bash</code> <code>Fedora</code> <code>Windows</code> <code>English</code> <code>Hindi</code> <code>Gujarati</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Atom%20symbol/3D/atom_symbol_3d.png" width="16" height="16" align="absmiddle" /> React</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Rocket/3D/rocket_3d.png" width="16" height="16" align="absmiddle" /> FastAPI</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Whale/3D/whale_3d.png" width="16" height="16" align="absmiddle" /> Docker</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Link/3D/link_3d.png" width="16" height="16" align="absmiddle" /> Git</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Cat%20face/3D/cat_face_3d.png" width="16" height="16" align="absmiddle" /> GitHub</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Laptop/3D/laptop_3d.png" width="16" height="16" align="absmiddle" /> VS Code</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Gear/3D/gear_3d.png" width="16" height="16" align="absmiddle" /> HTML</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Wrench/3D/wrench_3d.png" width="16" height="16" align="absmiddle" /> CSS</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Page%20facing%20up/3D/page_facing_up_3d.png" width="16" height="16" align="absmiddle" /> JavaScript</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Snake/3D/snake_3d.png" width="16" height="16" align="absmiddle" /> Python</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Toolbox/3D/toolbox_3d.png" width="16" height="16" align="absmiddle" /> C</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Cabinet/3D/cabinet_3d.png" width="16" height="16" align="absmiddle" /> C++</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Pager/3D/pager_3d.png" width="16" height="16" align="absmiddle" /> Bash</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Crown/3D/crown_3d.png" width="16" height="16" align="absmiddle" /> Fedora</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Window/3D/window_3d.png" width="16" height="16" align="absmiddle" /> Windows</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Books/3D/books_3d.png" width="16" height="16" align="absmiddle" /> English</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Globe%20with%20meridians/3D/globe_with_meridians_3d.png" width="16" height="16" align="absmiddle" /> Hindi</code>
+      <code><img src="https://raw.githubusercontent.com/microsoft/fluentui-emoji/main/assets/Globe%20with%20meridians/3D/globe_with_meridians_3d.png" width="16" height="16" align="absmiddle" /> Gujarati</code>
     </td>
   </tr>
 </table>
