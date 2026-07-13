@@ -1,4 +1,4 @@
-<!--
+-==---===<!--
 ╔══════════════════════════════════════════════════════════════════════════════════╗
 ║       ANMOL RATHOD · PREMIUM CYBERPUNK GITHUB PROFILE README                   ║
 ║       AI Security · LLM Security · Cybersecurity · OSINT                       ║
@@ -12,9 +12,10 @@
 
 <!-- ══════════════════════ ANIMATED TYPING ══════════════════════ -->
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=20&duration=2800&pause=900&color=00F0FF&background=00000000&center=true&vCenter=true&width=700&lines=🤖+AI+Security+Analyst+%7C+LLM+Red+Teamer;🛡️+Hunting+AI+Threats+%7C+Securing+the+Future;🔬+Generative+AI+Security+Researcher;⚡+Building+Defenses+for+the+AI+Age" alt="Typing SVG" />
-  </a>
+  <img
+    src="https://readme-typing-svg.demolab.com/?font=Orbitron&size=22&duration=2800&pause=900&color=00F0FF&center=true&vCenter=true&width=800&lines=AI+Security+Analyst;LLM+Security+Researcher;Cybersecurity+Builder;Red+Teamer"
+    alt="Typing SVG"
+  />
 </p>
 
 <!-- ══════════════════════ BADGE ROW ══════════════════════ -->
