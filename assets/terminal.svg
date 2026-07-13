@@ -1,133 +1,219 @@
-<svg width="900" height="320" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="340" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#04080f"/>
-      <stop offset="100%" style="stop-color:#060310"/>
+    <!-- ═══ 3D BACKGROUND GRADIENT ═══ -->
+    <radialGradient id="bgRadial" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" style="stop-color:#0b081c"/>
+      <stop offset="50%" style="stop-color:#05030e"/>
+      <stop offset="100%" style="stop-color:#020106"/>
+    </radialGradient>
+
+    <!-- ═══ TERMINAL GLASS GRADIENT ═══ -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(13,17,25,0.9)"/>
+      <stop offset="100%" style="stop-color:rgba(6,8,13,0.95)"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="titleGlow">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+
+    <!-- ═══ BORDER GRADIENTS ═══ -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#bd00ff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00f0ff;stop-opacity:0.6"/>
+    </linearGradient>
+
     <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#00f0ff"/>
-      <stop offset="100%" style="stop-color:#bd00ff"/>
+      <stop offset="50%" style="stop-color:#bd00ff"/>
+      <stop offset="100%" style="stop-color:#00ff66"/>
     </linearGradient>
-    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="10" cy="10" r="0.7" fill="rgba(0,240,255,0.15)"/>
+
+    <!-- ═══ GLOW FILTERS ═══ -->
+    <filter id="megaGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feGaussianBlur stdDeviation="8" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- ═══ 3D DROP SHADOW ═══ -->
+    <filter id="glassShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#000000" flood-opacity="0.7"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#00f0ff" flood-opacity="0.1"/>
+    </filter>
+
+    <!-- ═══ PATTERNS ═══ -->
+    <pattern id="grid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,240,255,0.03)" stroke-width="1"/>
+    </pattern>
+    
+    <pattern id="scanlines" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="2" fill="rgba(0,240,255,0.015)"/>
+      <rect y="2" width="1" height="2" fill="rgba(0,0,0,0.15)"/>
     </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="320" fill="url(#bg)" rx="10"/>
-  <rect width="900" height="320" fill="url(#dots)" rx="10"/>
+  <!-- ═══════════════════ AMBIENT BACKGROUND ═══════════════════ -->
+  <rect width="900" height="340" fill="url(#bgRadial)" rx="12"/>
+  <rect width="900" height="340" fill="url(#grid)" rx="12"/>
+  
+  <!-- Glowing background orbs -->
+  <circle cx="100" cy="170" r="120" fill="rgba(0,240,255,0.03)" filter="url(#megaGlow)"/>
+  <circle cx="800" cy="170" r="120" fill="rgba(189,0,255,0.03)" filter="url(#megaGlow)"/>
 
-  <!-- Terminal header bar -->
-  <rect x="0" y="0" width="900" height="42" rx="10" fill="#0d1117"/>
-  <rect x="0" y="32" width="900" height="10" fill="#0d1117"/>
+  <!-- ═══════════════════ TERMINAL WINDOW ═══════════════════ -->
+  <g transform="translate(40, 20)" filter="url(#glassShadow)">
+    <!-- Terminal Background -->
+    <rect width="820" height="300" fill="url(#glassGrad)" rx="8"/>
+    <rect width="820" height="300" fill="url(#scanlines)" rx="8" opacity="0.6"/>
+    
+    <!-- Inner Border Glow -->
+    <rect x="1" y="1" width="818" height="298" fill="none" stroke="url(#borderGrad)" stroke-width="1" rx="7" opacity="0.8"/>
+    <rect x="0" y="0" width="820" height="300" fill="none" stroke="url(#borderGrad)" stroke-width="0.5" rx="8" filter="url(#softGlow)" opacity="0.5"/>
 
-  <!-- Traffic light dots -->
-  <circle cx="24" cy="21" r="7" fill="#ff5f57"/>
-  <circle cx="46" cy="21" r="7" fill="#febc2e"/>
-  <circle cx="68" cy="21" r="7" fill="#28c840"/>
+    <!-- ═══════════════════ TERMINAL HEADER ═══════════════════ -->
+    <rect x="1" y="1" width="818" height="36" rx="7" fill="rgba(255,255,255,0.02)"/>
+    <line x1="1" y1="37" x2="819" y2="37" stroke="url(#headerGrad)" stroke-width="1.5" opacity="0.7"/>
+    
+    <!-- Window Controls -->
+    <g transform="translate(15, 12)">
+      <circle cx="6" cy="6" r="5.5" fill="#ff5f57" stroke="#e0443e" stroke-width="0.5"/>
+      <circle cx="26" cy="6" r="5.5" fill="#febc2e" stroke="#d89f24" stroke-width="0.5"/>
+      <circle cx="46" cy="6" r="5.5" fill="#28c840" stroke="#1da631" stroke-width="0.5"/>
+    </g>
 
-  <!-- Terminal title -->
-  <text x="450" y="27" font-family="Courier New" font-size="12" fill="#8b949e" text-anchor="middle" font-weight="600">
-    anmol@infinex-terminal: ~/about_me
-  </text>
+    <!-- Header Title -->
+    <text x="410" y="23" font-family="'Courier New', monospace" font-size="11" fill="#8b949e" text-anchor="middle" letter-spacing="1">
+      <tspan fill="#00f0ff">anmol</tspan>@<tspan fill="#bd00ff">infinex-terminal</tspan>: <tspan fill="#ffffff">~/system_profile</tspan>
+    </text>
 
-  <!-- Separator line under header -->
-  <line x1="0" y1="42" x2="900" y2="42" stroke="#1a2233" stroke-width="2"/>
-  <line x1="0" y1="42" x2="900" y2="42" stroke="url(#headerGrad)" stroke-width="1" opacity="0.6"/>
+    <!-- Header Decorative Lines -->
+    <g opacity="0.3" stroke="#00f0ff" stroke-width="1">
+      <path d="M 760,18 L 770,18 L 775,23 L 795,23"/>
+      <circle cx="795" cy="23" r="1.5"/>
+    </g>
 
-  <!-- SECTION LABEL -->
-  <text x="30" y="73" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">┌─────────────────────────────────────────────────────────────────────────────────────────┐</text>
-  <text x="30" y="91" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">│</text>
-  <text x="134" y="91" font-family="Courier New" font-size="13" fill="#00f0ff" font-weight="700" filter="url(#titleGlow)">◈  SYSTEM PROFILE — ANMOL RATHOD</text>
-  <text x="858" y="91" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">│</text>
-  <text x="30" y="109" font-family="Courier New" font-size="11" fill="#00f0ff" filter="url(#glow)">└─────────────────────────────────────────────────────────────────────────────────────────┘</text>
+    <!-- ═══════════════════ TERMINAL CONTENT ═══════════════════ -->
+    <!-- Boot Sequence / Banner -->
+    <g transform="translate(25, 65)">
+      <text x="0" y="0" font-family="'Courier New', monospace" font-size="13" fill="#00f0ff" font-weight="700" filter="url(#softGlow)">
+        ◈ INIT_SYSTEM: <tspan fill="#ffffff">ANMOL RATHOD</tspan> [v2.0.26]
+      </text>
+      <line x1="0" y1="8" x2="450" y2="8" stroke="rgba(0,240,255,0.3)" stroke-width="1" stroke-dasharray="2 2"/>
+    </g>
 
-  <!-- Line 1 -->
-  <text x="30" y="135" font-family="Courier New" font-size="12.5" fill="#bd00ff" filter="url(#glow)">$</text>
-  <text x="48" y="135" font-family="Courier New" font-size="12.5" fill="#8b949e">cat /etc/profile.d/anmol.conf</text>
+    <!-- Command Input -->
+    <g transform="translate(25, 100)">
+      <text x="0" y="0" font-family="'Courier New', monospace" font-size="13" fill="#bd00ff" font-weight="700" filter="url(#softGlow)">$&gt;</text>
+      <text x="25" y="0" font-family="'Courier New', monospace" font-size="13" fill="#e6edf3" font-weight="600">execute_profile_matrix.sh --verbose</text>
+    </g>
 
-  <!-- Line 2: Name -->
-  <text x="30" y="158" font-family="Courier New" font-size="12" fill="#00ff66">OPERATOR</text>
-  <text x="130" y="158" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
-  <text x="148" y="158" font-family="Courier New" font-size="12" fill="#ffffff" font-weight="600">"Anmol Rathod"</text>
+    <!-- Data Output -->
+    <g transform="translate(25, 130)" font-family="'Courier New', monospace" font-size="12">
+      <!-- Row 1 -->
+      <text x="0" y="0" fill="#00ff66" font-weight="600">[+] OPERATOR</text>
+      <text x="120" y="0" fill="#8b949e">::</text>
+      <text x="145" y="0" fill="#ffffff" font-weight="700">"Anmol Rathod"</text>
 
-  <!-- Line 3: Role -->
-  <text x="30" y="178" font-family="Courier New" font-size="12" fill="#00ff66">ROLE</text>
-  <text x="130" y="178" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
-  <text x="148" y="178" font-family="Courier New" font-size="12" fill="#00f0ff">"AI Security Analyst &amp; LLM Security Researcher"</text>
+      <!-- Row 2 -->
+      <text x="0" y="22" fill="#00ff66" font-weight="600">[+] ROLE</text>
+      <text x="120" y="22" fill="#8b949e">::</text>
+      <text x="145" y="22" fill="#00f0ff">"AI Security Analyst &amp; LLM Security Researcher"</text>
 
-  <!-- Line 4: Focus -->
-  <text x="30" y="198" font-family="Courier New" font-size="12" fill="#00ff66">FOCUS</text>
-  <text x="130" y="198" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
-  <text x="148" y="198" font-family="Courier New" font-size="12" fill="#bd00ff">"AI Security · LLM Security · Cybersecurity · OSINT"</text>
+      <!-- Row 3 -->
+      <text x="0" y="44" fill="#00ff66" font-weight="600">[+] FOCUS</text>
+      <text x="120" y="44" fill="#8b949e">::</text>
+      <text x="145" y="44" fill="#bd00ff">"AI Security · LLM Security · Cybersec · OSINT"</text>
 
-  <!-- Line 5: Status -->
-  <text x="30" y="218" font-family="Courier New" font-size="12" fill="#00ff66">STATUS</text>
-  <text x="130" y="218" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
-  <text x="148" y="218" font-family="Courier New" font-size="12" fill="#febc2e">"Actively building · Hunting AI threats · Open to collab"</text>
+      <!-- Row 4 -->
+      <text x="0" y="66" fill="#00ff66" font-weight="600">[+] STATUS</text>
+      <text x="120" y="66" fill="#8b949e">::</text>
+      <text x="145" y="66" fill="#febc2e">"Actively building · Hunting threats · Open to collab"</text>
 
-  <!-- Line 6: Location -->
-  <text x="30" y="238" font-family="Courier New" font-size="12" fill="#00ff66">LOCATION</text>
-  <text x="130" y="238" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
-  <text x="148" y="238" font-family="Courier New" font-size="12" fill="#ffffff">"India 🇮🇳 · GMT+5:30"</text>
+      <!-- Row 5 -->
+      <text x="0" y="88" fill="#00ff66" font-weight="600">[+] LOCATION</text>
+      <text x="120" y="88" fill="#8b949e">::</text>
+      <text x="145" y="88" fill="#ffffff">"India 🇮🇳 · GMT+5:30"</text>
 
-  <!-- Line 7: Contact -->
-  <text x="30" y="258" font-family="Courier New" font-size="12" fill="#00ff66">CONTACT</text>
-  <text x="130" y="258" font-family="Courier New" font-size="12" fill="#8b949e">=</text>
-  <text x="148" y="258" font-family="Courier New" font-size="12" fill="#00f0ff">"anmolrathod15007@gmail.com"</text>
+      <!-- Row 6 -->
+      <text x="0" y="110" fill="#00ff66" font-weight="600">[+] CONTACT</text>
+      <text x="120" y="110" fill="#8b949e">::</text>
+      <text x="145" y="110" fill="#00f0ff">"anmolrathod15007@gmail.com"</text>
+    </g>
 
-  <!-- Blinking cursor line -->
-  <text x="30" y="285" font-family="Courier New" font-size="12.5" fill="#00f0ff" filter="url(#glow)">$</text>
-  <text x="48" y="285" font-family="Courier New" font-size="12.5" fill="#8b949e">_</text>
-  <rect x="54" y="272" width="9" height="16" fill="#00f0ff" opacity="0.9">
-    <animate attributeName="opacity" values="0.9;0;0.9" dur="1s" repeatCount="indefinite"/>
-  </rect>
+    <!-- Command Prompt Bottom -->
+    <g transform="translate(25, 275)">
+      <text x="0" y="0" font-family="'Courier New', monospace" font-size="13" fill="#bd00ff" font-weight="700" filter="url(#softGlow)">$&gt;</text>
+      <!-- Blinking Cursor -->
+      <rect x="25" y="-10" width="8" height="13" fill="#00f0ff" filter="url(#softGlow)">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </rect>
+    </g>
 
-  <!-- Right panel: Live indicator -->
-  <circle cx="855" cy="72" r="5" fill="#00ff66" filter="url(#glow)">
-    <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <text x="840" y="77" font-family="Courier New" font-size="9" fill="#00ff66" text-anchor="end">LIVE</text>
+    <!-- ═══════════════════ RIGHT PANEL HUD (SKILLS) ═══════════════════ -->
+    <g transform="translate(560, 65)">
+      <!-- Panel Border -->
+      <rect x="0" y="0" width="230" height="210" fill="rgba(0,0,0,0.2)" stroke="rgba(0,240,255,0.2)" stroke-width="1" rx="6"/>
+      
+      <!-- Panel Header -->
+      <rect x="0" y="0" width="230" height="25" fill="rgba(0,240,255,0.05)" rx="6"/>
+      <text x="10" y="17" font-family="'Courier New', monospace" font-size="10" fill="#00f0ff" font-weight="700" letter-spacing="1">
+        SYS.STATS // MATRIX
+      </text>
+      
+      <!-- Live Indicator -->
+      <circle cx="210" cy="12" r="3" fill="#00ff66" filter="url(#softGlow)">
+        <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
 
-  <!-- Right panel: Progress bars for skills -->
-  <text x="640" y="140" font-family="Courier New" font-size="9" fill="#8b949e">AI SECURITY</text>
-  <rect x="730" y="128" width="145" height="8" rx="4" fill="#1a2233"/>
-  <rect x="730" y="128" width="130" height="8" rx="4" fill="url(#headerGrad)" opacity="0.8"/>
-  <text x="880" y="138" font-family="Courier New" font-size="9" fill="#00f0ff">90%</text>
+      <!-- Skill Bars -->
+      <g transform="translate(15, 45)" font-family="'Courier New', monospace" font-size="9">
+        <!-- AI SEC -->
+        <text x="0" y="0" fill="#8b949e">AI_SEC</text>
+        <rect x="65" y="-6" width="115" height="6" fill="#1a2233" rx="3"/>
+        <rect x="65" y="-6" width="105" height="6" fill="#00f0ff" rx="3" filter="url(#softGlow)"/>
+        <text x="188" y="0" fill="#00f0ff">90%</text>
 
-  <text x="640" y="160" font-family="Courier New" font-size="9" fill="#8b949e">LLM SECURITY</text>
-  <rect x="730" y="148" width="145" height="8" rx="4" fill="#1a2233"/>
-  <rect x="730" y="148" width="115" height="8" rx="4" fill="#bd00ff" opacity="0.8"/>
-  <text x="880" y="158" font-family="Courier New" font-size="9" fill="#bd00ff">80%</text>
+        <!-- LLM SEC -->
+        <text x="0" y="25" fill="#8b949e">LLM_SEC</text>
+        <rect x="65" y="19" width="115" height="6" fill="#1a2233" rx="3"/>
+        <rect x="65" y="19" width="95" height="6" fill="#bd00ff" rx="3" filter="url(#softGlow)"/>
+        <text x="188" y="25" fill="#bd00ff">80%</text>
 
-  <text x="640" y="180" font-family="Courier New" font-size="9" fill="#8b949e">PENTESTING</text>
-  <rect x="730" y="168" width="145" height="8" rx="4" fill="#1a2233"/>
-  <rect x="730" y="168" width="105" height="8" rx="4" fill="#00ff66" opacity="0.8"/>
-  <text x="880" y="178" font-family="Courier New" font-size="9" fill="#00ff66">72%</text>
+        <!-- PENTEST -->
+        <text x="0" y="50" fill="#8b949e">PENTEST</text>
+        <rect x="65" y="44" width="115" height="6" fill="#1a2233" rx="3"/>
+        <rect x="65" y="44" width="85" height="6" fill="#00ff66" rx="3" filter="url(#softGlow)"/>
+        <text x="188" y="50" fill="#00ff66">72%</text>
 
-  <text x="640" y="200" font-family="Courier New" font-size="9" fill="#8b949e">PYTHON DEV</text>
-  <rect x="730" y="188" width="145" height="8" rx="4" fill="#1a2233"/>
-  <rect x="730" y="188" width="120" height="8" rx="4" fill="#febc2e" opacity="0.8"/>
-  <text x="880" y="198" font-family="Courier New" font-size="9" fill="#febc2e">83%</text>
+        <!-- PYTHON -->
+        <text x="0" y="75" fill="#8b949e">PYTHON</text>
+        <rect x="65" y="69" width="115" height="6" fill="#1a2233" rx="3"/>
+        <rect x="65" y="69" width="98" height="6" fill="#febc2e" rx="3" filter="url(#softGlow)"/>
+        <text x="188" y="75" fill="#febc2e">83%</text>
 
-  <text x="640" y="220" font-family="Courier New" font-size="9" fill="#8b949e">OSINT</text>
-  <rect x="730" y="208" width="145" height="8" rx="4" fill="#1a2233"/>
-  <rect x="730" y="208" width="110" height="8" rx="4" fill="#ff5f57" opacity="0.8"/>
-  <text x="880" y="218" font-family="Courier New" font-size="9" fill="#ff5f57">76%</text>
+        <!-- OSINT -->
+        <text x="0" y="100" fill="#8b949e">OSINT</text>
+        <rect x="65" y="94" width="115" height="6" fill="#1a2233" rx="3"/>
+        <rect x="65" y="94" width="90" height="6" fill="#ff5f57" rx="3" filter="url(#softGlow)"/>
+        <text x="188" y="100" fill="#ff5f57">76%</text>
 
-  <!-- Vertical separator -->
-  <line x1="620" y1="120" x2="620" y2="270" stroke="#1a2233" stroke-width="1"/>
+        <!-- 3D Graph Decoration -->
+        <g transform="translate(0, 125)" opacity="0.6">
+          <path d="M 0,30 L 20,20 L 40,25 L 60,10 L 80,15 L 100,5 L 120,20 L 140,0" fill="none" stroke="#00f0ff" stroke-width="1.5" filter="url(#softGlow)"/>
+          <path d="M 0,30 L 20,20 L 40,25 L 60,10 L 80,15 L 100,5 L 120,20 L 140,0 L 140,35 L 0,35 Z" fill="rgba(0,240,255,0.1)"/>
+          <circle cx="140" cy="0" r="2" fill="#00f0ff" filter="url(#softGlow)"/>
+        </g>
+      </g>
+    </g>
 
-  <!-- Border -->
-  <rect width="900" height="320" fill="none" stroke="#1a2233" stroke-width="2" rx="10"/>
-  <rect width="900" height="320" fill="none" stroke="url(#headerGrad)" stroke-width="1" rx="10" opacity="0.3"/>
+    <!-- Scanline overlay specifically for terminal -->
+    <rect x="1" y="38" width="818" height="261" fill="url(#scanlines)" rx="0" opacity="0.4"/>
+  </g>
 </svg>

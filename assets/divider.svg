@@ -1,33 +1,99 @@
-<svg width="900" height="20" viewBox="0 0 900 20" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="40" viewBox="0 0 900 40" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   style="stop-color:transparent"/>
-      <stop offset="15%"  style="stop-color:#00f0ff"/>
-      <stop offset="40%"  style="stop-color:#bd00ff"/>
-      <stop offset="60%"  style="stop-color:#00ff66"/>
-      <stop offset="85%"  style="stop-color:#00f0ff"/>
-      <stop offset="100%" style="stop-color:transparent"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="b"/>
+    <!-- ═══ GLOW FILTERS ═══ -->
+    <filter id="megaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="b1"/>
+      <feGaussianBlur stdDeviation="4" result="b2"/>
+      <feGaussianBlur stdDeviation="8" result="b3"/>
+      <feMerge>
+        <feMergeNode in="b3"/>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+
+    <!-- ═══ GRADIENTS ═══ -->
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:transparent"/>
+      <stop offset="25%"  style="stop-color:#00f0ff;stop-opacity:0.8"/>
+      <stop offset="50%"  style="stop-color:#bd00ff;stop-opacity:1"/>
+      <stop offset="75%"  style="stop-color:#00ff66;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+    </linearGradient>
+
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:transparent"/>
+      <stop offset="40%"  style="stop-color:#ffffff;stop-opacity:0.5"/>
+      <stop offset="50%"  style="stop-color:#ffffff;stop-opacity:1"/>
+      <stop offset="60%"  style="stop-color:#ffffff;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+    </linearGradient>
+
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="100%" style="stop-color:#bd00ff"/>
+    </linearGradient>
   </defs>
 
-  <!-- Main glowing line -->
-  <line x1="0" y1="10" x2="900" y2="10" stroke="url(#divGrad)" stroke-width="1.5" filter="url(#glow)"/>
+  <!-- ═══════════════════ MAIN LINES ═══════════════════ -->
+  <!-- Outer glow trace -->
+  <line x1="50" y1="20" x2="850" y2="20" stroke="url(#divGrad)" stroke-width="2" filter="url(#megaGlow)" opacity="0.6"/>
+  
+  <!-- Core bright line -->
+  <line x1="100" y1="20" x2="800" y2="20" stroke="url(#coreGrad)" stroke-width="1"/>
 
-  <!-- Center diamond -->
-  <polygon points="450,4 456,10 450,16 444,10"
-           fill="#00f0ff" filter="url(#glow)" opacity="0.9"/>
+  <!-- Scanning pulse -->
+  <line x1="0" y1="20" x2="100" y2="20" stroke="#ffffff" stroke-width="2" filter="url(#softGlow)">
+    <animate attributeName="x1" values="-100;900" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;1000" dur="3s" repeatCount="indefinite"/>
+  </line>
 
-  <!-- Left micro-dots -->
-  <circle cx="380" cy="10" r="2"   fill="#bd00ff" filter="url(#glow)"/>
-  <circle cx="360" cy="10" r="1.2" fill="#00f0ff" opacity="0.6"/>
-  <circle cx="344" cy="10" r="0.8" fill="#00f0ff" opacity="0.35"/>
+  <!-- ═══════════════════ CENTER ORNAMENT ═══════════════════ -->
+  <g transform="translate(450, 20)">
+    <!-- Rotating outer ring -->
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.5" stroke-dasharray="4 4">
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Central Hexagon -->
+    <polygon points="0,-8 7,-4 7,4 0,8 -7,4 -7,-4" fill="#060310" stroke="url(#hexGrad)" stroke-width="1.5" filter="url(#megaGlow)"/>
+    
+    <!-- Inner glowing dot -->
+    <circle cx="0" cy="0" r="2" fill="#00ff66" filter="url(#softGlow)">
+      <animate attributeName="r" values="1.5;3;1.5" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 
-  <!-- Right micro-dots -->
-  <circle cx="520" cy="10" r="2"   fill="#bd00ff" filter="url(#glow)"/>
-  <circle cx="540" cy="10" r="1.2" fill="#00f0ff" opacity="0.6"/>
-  <circle cx="556" cy="10" r="0.8" fill="#00f0ff" opacity="0.35"/>
+  <!-- ═══════════════════ FLANKING MICRO-DOTS ═══════════════════ -->
+  <!-- Left Side -->
+  <g transform="translate(390, 20)">
+    <circle cx="0" cy="0" r="2" fill="#00f0ff" filter="url(#softGlow)"/>
+    <circle cx="-15" cy="0" r="1.5" fill="#00f0ff" opacity="0.7"/>
+    <circle cx="-28" cy="0" r="1" fill="#00f0ff" opacity="0.4"/>
+    <circle cx="-38" cy="0" r="0.5" fill="#00f0ff" opacity="0.2"/>
+  </g>
+
+  <!-- Right Side -->
+  <g transform="translate(510, 20)">
+    <circle cx="0" cy="0" r="2" fill="#bd00ff" filter="url(#softGlow)"/>
+    <circle cx="15" cy="0" r="1.5" fill="#bd00ff" opacity="0.7"/>
+    <circle cx="28" cy="0" r="1" fill="#bd00ff" opacity="0.4"/>
+    <circle cx="38" cy="0" r="0.5" fill="#bd00ff" opacity="0.2"/>
+  </g>
+
+  <!-- ═══════════════════ CIRCUIT TRACES ═══════════════════ -->
+  <!-- Left trace -->
+  <path d="M 250,20 L 260,20 L 265,12 L 285,12" fill="none" stroke="#00f0ff" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="285" cy="12" r="1.5" fill="#00f0ff" opacity="0.6"/>
+  
+  <!-- Right trace -->
+  <path d="M 650,20 L 640,20 L 635,28 L 615,28" fill="none" stroke="#bd00ff" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="615" cy="28" r="1.5" fill="#bd00ff" opacity="0.6"/>
+
 </svg>
