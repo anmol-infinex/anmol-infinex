@@ -1,102 +1,72 @@
 <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+      
+      .header-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        fill: url(#gradientText);
+      }
+      
+      .subtitle-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        fill: #00d4ff;
+      }
+      
       @keyframes float {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-      }
-      @keyframes glow {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
-      }
-      @keyframes rotate3d {
-        0% { transform: rotateX(0deg) rotateY(0deg); }
-        100% { transform: rotateX(5deg) rotateY(10deg); }
-      }
-      @keyframes slideIn {
-        0% { opacity: 0; transform: translateX(-50px); }
-        100% { opacity: 1; transform: translateX(0); }
-      }
-      @keyframes expandWidth {
-        0% { width: 0; }
-        100% { width: 100%; }
+        50% { transform: translateY(20px); }
       }
       
-      .card {
-        animation: float 3s ease-in-out infinite, slideIn 0.8s ease-out forwards;
-      }
-      .card:nth-child(1) { animation-delay: 0s, 0s; }
-      .card:nth-child(2) { animation-delay: 0.2s, 0.2s; }
-      .card:nth-child(3) { animation-delay: 0.4s, 0.4s; }
-      .card:nth-child(4) { animation-delay: 0.6s, 0.6s; }
-      
-      .glow-circle {
-        animation: glow 2s ease-in-out infinite;
+      @keyframes glow-pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
       }
       
-      .connector-line {
-        animation: expandWidth 1s ease-out forwards;
-        animation-delay: 1s;
+      @keyframes rotate-clockwise {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
       
-      .title {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 32px;
-        font-weight: bold;
-        fill: #00d4ff;
-        text-anchor: middle;
-        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+      @keyframes rotate-counter {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(-360deg); }
       }
       
-      .phase-title {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        fill: #fff;
-        text-anchor: middle;
+      .orb-group {
+        animation: float 4s ease-in-out infinite;
       }
       
-      .phase-desc {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 13px;
-        fill: #b0b0b0;
-        text-anchor: middle;
+      .glow {
+        animation: glow-pulse 3s ease-in-out infinite;
       }
       
-      .bg-gradient {
-        fill: url(#bgGradient);
+      .rotate-ring-1 {
+        animation: rotate-clockwise 20s linear infinite;
+      }
+      
+      .rotate-ring-2 {
+        animation: rotate-counter 15s linear infinite;
       }
     </style>
     
-    <!-- Gradients -->
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    <linearGradient id="gradientText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
     </linearGradient>
     
-    <linearGradient id="card1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ff8e72;stop-opacity:1" />
-    </linearGradient>
-    
-    <linearGradient id="card2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#44a7c6;stop-opacity:1" />
-    </linearGradient>
-    
-    <linearGradient id="card3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#95e1d3;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#38b6a8;stop-opacity:1" />
-    </linearGradient>
-    
-    <linearGradient id="card4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f38181;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#aa96da;stop-opacity:1" />
-    </linearGradient>
-    
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-opacity="0.3"/>
-    </filter>
+    <radialGradient id="orbGradient" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:0.15" />
+    </radialGradient>
     
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -105,131 +75,103 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-opacity="0.3" flood-color="#00d4ff"/>
+    </filter>
   </defs>
   
   <!-- Background -->
-  <rect width="1200" height="800" class="bg-gradient"/>
+  <rect width="1200" height="800" fill="#0B1023"/>
   
-  <!-- Animated background circles -->
-  <circle cx="200" cy="150" r="150" fill="url(#card1)" opacity="0.1" class="glow-circle"/>
-  <circle cx="1000" cy="700" r="200" fill="url(#card2)" opacity="0.1" class="glow-circle"/>
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grid)"/>
   
-  <!-- Title -->
-  <text x="600" y="60" class="title">Product Roadmap 2024-2025</text>
-  
-  <!-- Phase 1 - Current -->
-  <g class="card" filter="url(#shadow)">
-    <!-- 3D Card Effect -->
-    <path d="M 80 130 L 250 110 L 250 370 L 80 390 Z" fill="rgba(0,0,0,0.1)" />
-    <path d="M 250 110 L 280 90 L 280 350 L 250 370 Z" fill="rgba(0,0,0,0.2)" />
-    
-    <!-- Main Card -->
-    <rect x="80" y="130" width="170" height="260" rx="15" fill="url(#card1)" filter="url(#glow)"/>
-    
-    <!-- Icon placeholder with 3D -->
-    <circle cx="165" cy="200" r="35" fill="rgba(255,255,255,0.2)"/>
-    <text x="165" y="210" font-size="40" text-anchor="middle" fill="white">🚀</text>
-    
-    <!-- Content -->
-    <text x="165" y="260" class="phase-title">Phase 1</text>
-    <text x="165" y="280" class="phase-title" font-size="16">Foundation</text>
-    <text x="165" y="305" class="phase-desc">Core infrastructure</text>
-    <text x="165" y="323" class="phase-desc">API development</text>
-    <text x="165" y="341" class="phase-desc">Auth system</text>
+  <!-- Animated background blobs -->
+  <g opacity="0.05">
+    <circle cx="200" cy="150" r="300" fill="#00d4ff" class="glow"/>
+    <circle cx="900" cy="600" r="350" fill="#a855f7" class="glow"/>
+    <circle cx="1100" cy="200" r="280" fill="#ec4899" class="glow"/>
   </g>
   
-  <!-- Connector Line 1 -->
-  <g class="connector-line">
-    <line x1="250" y1="260" x2="350" y2="260" stroke="url(#card1)" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-    <circle cx="300" cy="260" r="8" fill="url(#card1)" opacity="0.8"/>
+  <!-- Header Section -->
+  <text x="600" y="80" text-anchor="middle" class="header-text">CERTIFICATIONS BY</text>
+  
+  <!-- Decorative underline -->
+  <line x1="475" y1="110" x2="725" y2="110" stroke="url(#gradientText)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Logo Orbs Grid -->
+  <!-- AWS Logo Orb -->
+  <g class="orb-group">
+    <circle cx="150" cy="350" r="90" fill="url(#orbGradient)" filter="url(#shadow)"/>
+    <circle cx="150" cy="350" r="88" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.6" class="rotate-ring-1"/>
+    <circle cx="150" cy="350" r="82" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.4" class="rotate-ring-2"/>
+    <!-- Inner shine -->
+    <circle cx="150" cy="350" r="70" fill="url(#orbGradient)" opacity="0.3"/>
+    <!-- AWS Logo placeholder -->
+    <rect x="120" y="320" width="60" height="60" fill="white" opacity="0.1" rx="4"/>
+    <text x="150" y="360" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#00d4ff" font-weight="bold">AWS</text>
   </g>
   
-  <!-- Phase 2 - In Progress -->
-  <g class="card" filter="url(#shadow)">
-    <!-- 3D Card Effect -->
-    <path d="M 350 130 L 520 110 L 520 370 L 350 390 Z" fill="rgba(0,0,0,0.1)" />
-    <path d="M 520 110 L 550 90 L 550 350 L 520 370 Z" fill="rgba(0,0,0,0.2)" />
-    
-    <!-- Main Card -->
-    <rect x="350" y="130" width="170" height="260" rx="15" fill="url(#card2)" filter="url(#glow)"/>
-    
-    <!-- Icon -->
-    <circle cx="435" cy="200" r="35" fill="rgba(255,255,255,0.2)"/>
-    <text x="435" y="210" font-size="40" text-anchor="middle" fill="white">⚙️</text>
-    
-    <!-- Content -->
-    <text x="435" y="260" class="phase-title">Phase 2</text>
-    <text x="435" y="280" class="phase-title" font-size="16">Integration</text>
-    <text x="435" y="305" class="phase-desc">Third-party APIs</text>
-    <text x="435" y="323" class="phase-desc">Analytics setup</text>
-    <text x="435" y="341" class="phase-desc">User dashboard</text>
+  <!-- Deloitte Logo Orb -->
+  <g class="orb-group" style="animation-delay: 0.3s">
+    <circle cx="420" cy="350" r="90" fill="url(#orbGradient)" filter="url(#shadow)"/>
+    <circle cx="420" cy="350" r="88" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.6" class="rotate-ring-1"/>
+    <circle cx="420" cy="350" r="82" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.4" class="rotate-ring-2"/>
+    <circle cx="420" cy="350" r="70" fill="url(#orbGradient)" opacity="0.3"/>
+    <rect x="390" y="320" width="60" height="60" fill="white" opacity="0.1" rx="4"/>
+    <text x="420" y="360" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#a855f7" font-weight="bold">DT</text>
   </g>
   
-  <!-- Connector Line 2 -->
-  <g class="connector-line">
-    <line x1="520" y1="260" x2="620" y2="260" stroke="url(#card2)" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-    <circle cx="570" cy="260" r="8" fill="url(#card2)" opacity="0.8"/>
+  <!-- Tata Logo Orb -->
+  <g class="orb-group" style="animation-delay: 0.6s">
+    <circle cx="690" cy="350" r="90" fill="url(#orbGradient)" filter="url(#shadow)"/>
+    <circle cx="690" cy="350" r="88" fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.6" class="rotate-ring-1"/>
+    <circle cx="690" cy="350" r="82" fill="none" stroke="#a855f7" stroke-width="1" opacity="0.4" class="rotate-ring-2"/>
+    <circle cx="690" cy="350" r="70" fill="url(#orbGradient)" opacity="0.3"/>
+    <rect x="660" y="320" width="60" height="60" fill="white" opacity="0.1" rx="4"/>
+    <text x="690" y="360" text-anchor="middle" dominant-baseline="middle" font-size="18" fill="#ec4899" font-weight="bold">TG</text>
   </g>
   
-  <!-- Phase 3 - Upcoming -->
-  <g class="card" filter="url(#shadow)">
-    <!-- 3D Card Effect -->
-    <path d="M 620 130 L 790 110 L 790 370 L 620 390 Z" fill="rgba(0,0,0,0.1)" />
-    <path d="M 790 110 L 820 90 L 820 350 L 790 370 Z" fill="rgba(0,0,0,0.2)" />
-    
-    <!-- Main Card -->
-    <rect x="620" y="130" width="170" height="260" rx="15" fill="url(#card3)" filter="url(#glow)"/>
-    
-    <!-- Icon -->
-    <circle cx="705" cy="200" r="35" fill="rgba(255,255,255,0.2)"/>
-    <text x="705" y="210" font-size="40" text-anchor="middle" fill="white">✨</text>
-    
-    <!-- Content -->
-    <text x="705" y="260" class="phase-title">Phase 3</text>
-    <text x="705" y="280" class="phase-title" font-size="16">Enhancement</text>
-    <text x="705" y="305" class="phase-desc">ML features</text>
-    <text x="705" y="323" class="phase-desc">Performance boost</text>
-    <text x="705" y="341" class="phase-desc">Mobile app</text>
+  <!-- InAmigos Logo Orb -->
+  <g class="orb-group" style="animation-delay: 0.9s">
+    <circle cx="960" cy="350" r="90" fill="url(#orbGradient)" filter="url(#shadow)"/>
+    <circle cx="960" cy="350" r="88" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.6" class="rotate-ring-1"/>
+    <circle cx="960" cy="350" r="82" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.4" class="rotate-ring-2"/>
+    <circle cx="960" cy="350" r="70" fill="url(#orbGradient)" opacity="0.3"/>
+    <rect x="930" y="320" width="60" height="60" fill="white" opacity="0.1" rx="4"/>
+    <text x="960" y="360" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="#00d4ff" font-weight="bold">IA</text>
   </g>
   
-  <!-- Connector Line 3 -->
-  <g class="connector-line">
-    <line x1="790" y1="260" x2="890" y2="260" stroke="url(#card3)" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-    <circle cx="840" cy="260" r="8" fill="url(#card3)" opacity="0.8"/>
+  <!-- CDMI Logo Orb -->
+  <g class="orb-group" style="animation-delay: 1.2s">
+    <circle cx="285" cy="550" r="90" fill="url(#orbGradient)" filter="url(#shadow)"/>
+    <circle cx="285" cy="550" r="88" fill="none" stroke="#a855f7" stroke-width="1.5" opacity="0.6" class="rotate-ring-1"/>
+    <circle cx="285" cy="550" r="82" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.4" class="rotate-ring-2"/>
+    <circle cx="285" cy="550" r="70" fill="url(#orbGradient)" opacity="0.3"/>
+    <rect x="255" y="520" width="60" height="60" fill="white" opacity="0.1" rx="4"/>
+    <text x="285" y="560" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="#a855f7" font-weight="bold">CDMI</text>
   </g>
   
-  <!-- Phase 4 - Future -->
-  <g class="card" filter="url(#shadow)">
-    <!-- 3D Card Effect -->
-    <path d="M 890 130 L 1060 110 L 1060 370 L 890 390 Z" fill="rgba(0,0,0,0.1)" />
-    <path d="M 1060 110 L 1090 90 L 1090 350 L 1060 370 Z" fill="rgba(0,0,0,0.2)" />
-    
-    <!-- Main Card -->
-    <rect x="890" y="130" width="170" height="260" rx="15" fill="url(#card4)" filter="url(#glow)"/>
-    
-    <!-- Icon -->
-    <circle cx="975" cy="200" r="35" fill="rgba(255,255,255,0.2)"/>
-    <text x="975" y="210" font-size="40" text-anchor="middle" fill="white">🌟</text>
-    
-    <!-- Content -->
-    <text x="975" y="260" class="phase-title">Phase 4</text>
-    <text x="975" y="280" class="phase-title" font-size="16">Expansion</text>
-    <text x="975" y="305" class="phase-desc">Global scaling</text>
-    <text x="975" y="323" class="phase-desc">Enterprise tier</text>
-    <text x="975" y="341" class="phase-desc">AI integration</text>
+  <!-- Parul University Logo Orb -->
+  <g class="orb-group" style="animation-delay: 1.5s">
+    <circle cx="825" cy="550" r="90" fill="url(#orbGradient)" filter="url(#shadow)"/>
+    <circle cx="825" cy="550" r="88" fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.6" class="rotate-ring-1"/>
+    <circle cx="825" cy="550" r="82" fill="none" stroke="#a855f7" stroke-width="1" opacity="0.4" class="rotate-ring-2"/>
+    <circle cx="825" cy="550" r="70" fill="url(#orbGradient)" opacity="0.3"/>
+    <rect x="795" y="520" width="60" height="60" fill="white" opacity="0.1" rx="4"/>
+    <text x="825" y="560" text-anchor="middle" dominant-baseline="middle" font-size="16" fill="#ec4899" font-weight="bold">PU</text>
   </g>
   
-  <!-- Bottom Timeline -->
-  <line x1="80" y1="450" x2="1060" y2="450" stroke="#00d4ff" stroke-width="2" opacity="0.3"/>
-  
-  <!-- Timeline labels -->
-  <text x="165" y="510" class="phase-desc" font-size="14">Q3 2024</text>
-  <text x="435" y="510" class="phase-desc" font-size="14">Q4 2024</text>
-  <text x="705" y="510" class="phase-desc" font-size="14">Q1 2025</text>
-  <text x="975" y="510" class="phase-desc" font-size="14">Q2 2025</text>
-  
-  <!-- Legend -->
-  <text x="100" y="610" class="phase-desc" font-size="14">🎯 Current Focus</text>
-  <text x="100" y="660" class="phase-desc" font-size="14">📈 Continuous iteration and improvement</text>
-  <text x="100" y="710" class="phase-desc" font-size="14">🚀 Pushing boundaries of innovation</text>
+  <!-- Footer text -->
+  <g>
+    <line x1="300" y1="700" x2="400" y2="700" stroke="url(#gradientText)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <text x="600" y="705" text-anchor="middle" class="subtitle-text">TRUSTED & CERTIFIED</text>
+    <line x1="800" y1="700" x2="900" y2="700" stroke="url(#gradientText)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  </g>
 </svg>
