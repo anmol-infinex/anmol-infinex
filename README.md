@@ -240,17 +240,17 @@
 </p>
 
 <!-- Snake -->
-<h3 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=15&duration=4000&pause=2000&color=00FF66&background=00000000&center=true&vCenter=true&width=600&lines=🐍+CONTRIBUTION+GRID+SHIELD+🐍" alt="Snake Title" />
-</h3>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/anmol-infinex/anmol-infinex/output/github-contribution-grid-snake-dark.svg"
-    alt="Contribution Snake Animation" width="100%" />
-</p>
+<div align="center">
 
-<br />
-<p align="center"><img src="assets/divider.svg" alt="──" width="100%" /></p>
-<br />
+## 🐍 Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/github-contribution-grid-snake.svg">
+  <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME/output/github-contribution-grid-snake-dark.svg">
+</picture>
+
+</div>
 
 <!-- ══════════════════════ MISSION TIMELINE ══════════════════════ -->
 <p align="center">
